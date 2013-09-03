@@ -31,6 +31,7 @@ Set environment variables::
 Initialize database::
 
     createdb pranger
+    cd pranger
     ./manage.py syncdb --all
     ./manage.py migrate --fake
 
