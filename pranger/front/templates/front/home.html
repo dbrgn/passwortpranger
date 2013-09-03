@@ -26,7 +26,7 @@
             {% for website in object_list %}
                 <tr>
                     <td>{{ website.name }}</td>
-                    <td>{{ website.url }}</td>
+                    <td>{{ website.url|urlize }}</td>
                     <td>TBD</td>
                 </tr>
             {% endfor %}
