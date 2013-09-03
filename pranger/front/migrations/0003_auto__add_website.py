@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
@@ -9,49 +8,27 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        print('  Warning: This migration will drop all existing users.')
-        # Adding model 'User'
-        db.create_table(u'front_user', (
+        # Adding model 'Website'
+        db.create_table(u'front_website', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('password', self.gf('django.db.models.fields.CharField')(max_length=128)),
-            ('last_login', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
-            ('is_superuser', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('username', self.gf('django.db.models.fields.CharField')(unique=True, max_length=30)),
-            ('first_name', self.gf('django.db.models.fields.CharField')(max_length=30, blank=True)),
-            ('last_name', self.gf('django.db.models.fields.CharField')(max_length=30, blank=True)),
-            ('email', self.gf('django.db.models.fields.EmailField')(max_length=75, blank=True)),
-            ('is_staff', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('date_joined', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('url', self.gf('django.db.models.fields.URLField')(max_length=255)),
+            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('pw_plaintext', self.gf('django.db.models.fields.NullBooleanField')(null=True, blank=True)),
+            ('pw_min_length', self.gf('django.db.models.fields.SmallIntegerField')(null=True, blank=True)),
+            ('pw_max_length', self.gf('django.db.models.fields.SmallIntegerField')(null=True, blank=True)),
+            ('pw_alphabet_size', self.gf('django.db.models.fields.SmallIntegerField')(null=True, blank=True)),
+            ('pw_salted', self.gf('django.db.models.fields.NullBooleanField')(null=True, blank=True)),
+            ('pw_hash', self.gf('django.db.models.fields.CharField')(max_length=32, null=True, blank=True)),
+            ('tls', self.gf('django.db.models.fields.SmallIntegerField')()),
+            ('twofactor', self.gf('django.db.models.fields.NullBooleanField')(null=True, blank=True)),
         ))
-        db.send_create_signal(u'front', ['User'])
-
-        # Adding M2M table for field groups on 'User'
-        db.create_table(u'front_user_groups', (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('user', models.ForeignKey(orm[u'front.user'], null=False)),
-            ('group', models.ForeignKey(orm[u'auth.group'], null=False))
-        ))
-        db.create_unique(u'front_user_groups', ['user_id', 'group_id'])
-
-        # Adding M2M table for field user_permissions on 'User'
-        db.create_table(u'front_user_user_permissions', (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('user', models.ForeignKey(orm[u'front.user'], null=False)),
-            ('permission', models.ForeignKey(orm[u'auth.permission'], null=False))
-        ))
-        db.create_unique(u'front_user_user_permissions', ['user_id', 'permission_id'])
+        db.send_create_signal(u'front', ['Website'])
 
 
     def backwards(self, orm):
-        # Deleting model 'User'
-        db.delete_table(u'front_user')
-
-        # Removing M2M table for field groups on 'User'
-        db.delete_table('front_user_groups')
-
-        # Removing M2M table for field user_permissions on 'User'
-        db.delete_table('front_user_user_permissions')
+        # Deleting model 'Website'
+        db.delete_table(u'front_website')
 
 
     models = {
@@ -90,6 +67,21 @@ class Migration(SchemaMigration):
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
+        },
+        u'front.website': {
+            'Meta': {'object_name': 'Website'},
+            'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'pw_alphabet_size': ('django.db.models.fields.SmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'pw_hash': ('django.db.models.fields.CharField', [], {'max_length': '32', 'null': 'True', 'blank': 'True'}),
+            'pw_max_length': ('django.db.models.fields.SmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'pw_min_length': ('django.db.models.fields.SmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'pw_plaintext': ('django.db.models.fields.NullBooleanField', [], {'null': 'True', 'blank': 'True'}),
+            'pw_salted': ('django.db.models.fields.NullBooleanField', [], {'null': 'True', 'blank': 'True'}),
+            'tls': ('django.db.models.fields.SmallIntegerField', [], {}),
+            'twofactor': ('django.db.models.fields.NullBooleanField', [], {'null': 'True', 'blank': 'True'}),
+            'url': ('django.db.models.fields.URLField', [], {'max_length': '255'})
         }
     }
 
