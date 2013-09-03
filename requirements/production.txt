@@ -7,8 +7,5 @@ South
 psycopg2
 dj-database-url
 
-# Auth
-django-social-auth
-
 # Frontend
 django-messagegroups

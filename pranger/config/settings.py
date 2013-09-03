@@ -148,7 +148,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-    'social_auth.context_processors.social_auth_by_name_backends',
 )
 
 INSTALLED_APPS = (
@@ -164,7 +163,6 @@ INSTALLED_APPS = (
 
     # 3rd party apps
     'south',
-    'social_auth',
     'messagegroups',
 
     # Own apps
@@ -212,24 +210,6 @@ if DEBUG:
 
 # Auth
 AUTH_USER_MODEL = 'front.User'
-AUTHENTICATION_BACKENDS = ('social_auth.backends.google.GoogleOAuth2Backend',)
-LOGIN_URL = '/auth/login/'
-LOGIN_REDIRECT_URL = '/auth/login-successful/'
-LOGIN_ERROR_URL = '/auth/login-error/'
-GOOGLE_OAUTH2_CLIENT_ID = require_env('GOOGLE_OAUTH2_CLIENT_ID')
-GOOGLE_OAUTH2_CLIENT_SECRET = require_env('GOOGLE_OAUTH2_CLIENT_SECRET')
-#GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {'access_type': 'offline'}
-GOOGLE_OAUTH_EXTRA_SCOPE = [
-    # Add extra scopes here, e.g.
-    # 'https://www.googleapis.com/auth/userinfo.profile',
-    # 'https://adwords.google.com/api/adwords',
-]
-#GOOGLE_WHITE_LISTED_DOMAINS = []
-SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL
-SOCIAL_AUTH_DEFAULT_USERNAME = 'socialauth_user'
-SOCIAL_AUTH_UUID_LENGTH = 8
-SOCIAL_AUTH_SLUGIFY_USERNAMES = True
-SOCIAL_AUTH_URLOPEN_TIMEOUT = 15
 
 # Testing
 SOUTH_TESTS_MIGRATE = False
