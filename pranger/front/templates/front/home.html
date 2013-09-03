@@ -23,11 +23,13 @@
                 <th>URL</th>
                 <th>Rating</th>
             </tr>
-            <tr>
-                <td>digitec</td>
-                <td>http://databot.ch</td>
-                <td>asd</td>
-            </tr>
+            {% for website in object_list %}
+                <tr>
+                    <td>{{ website.name }}</td>
+                    <td>{{ website.url }}</td>
+                    <td>TBD</td>
+                </tr>
+            {% endfor %}
         </table>
     </div>
 {% endblock %}
