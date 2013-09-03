@@ -7,7 +7,4 @@ from front import views
 
 urlpatterns = patterns('',
     url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^auth/login/$', views.LoginView.as_view(), name='login'),
-    url(r'^auth/login-successful/$', views.LoginSuccessfulView.as_view(), name='login-successful'),
-    url(r'^auth/logout/$', views.LogoutView.as_view(), name='logout'),
 )
