@@ -34,8 +34,11 @@ class Website(models.Model):
     pw_max_length = models.SmallIntegerField(null=True, blank=True)
     pw_alphabet_size = models.SmallIntegerField(null=True, blank=True)
     pw_salted = models.NullBooleanField()
-    pw_hash = models.CharField(max_length=32, null=True, blank=True)
+    pw_hashfunction = models.CharField(max_length=32, null=True, blank=True)
 
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
     twofactor = models.NullBooleanField()
+
+    def __unicode__(self):
+        return self.name
