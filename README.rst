@@ -25,12 +25,12 @@ Set environment variables::
     POSTACTIVATE=$VIRTUAL_ENV/$VIRTUALENVWRAPPER_ENV_BIN_DIR/postactivate
     echo "export DJANGO_DEBUG=True" >> $POSTACTIVATE
     echo "export PORT=8000" >> $POSTACTIVATE
-    echo "export DATABASE_URL='postgres://localhost/{{ project_name }}'" >> $POSTACTIVATE
+    echo "export DATABASE_URL='postgres://localhost/pranger'" >> $POSTACTIVATE
     source $POSTACTIVATE
 
 Initialize database::
 
-    createdb {{ project_name }}
+    createdb pranger
     ./manage.py syncdb --all
     ./manage.py migrate --fake
 
