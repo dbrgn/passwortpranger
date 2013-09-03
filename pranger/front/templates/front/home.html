@@ -3,6 +3,31 @@
 {% block bodyclass %}home{% endblock %}
 
 {% block content %}
-    <h1>Welcome</h1>
-    <p>You can now add bootstrap markup to <em>base.html</em> and <em>home.html</em>.</p>
+    <div class="container intro">
+        <div class="row">
+            <div class="span4">
+                <img src="{{ STATIC_URL }}img/pillory.png" alt="Pranger">
+            </div>
+            <div class="span8">
+                <h1>Passwortpranger</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, veniam, voluptatem maxime totam repellat earum voluptate enim nihil autem iste eligendi ut perferendis maiores impedit aut. Enim molestias assumenda iste!</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container data">
+        <h2>Prangerliste</h2>
+        <table class="table">
+            <tr>
+                <th>Seite</th>
+                <th>URL</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <td>digitec</td>
+                <td>http://databot.ch</td>
+                <td>asd</td>
+            </tr>
+        </table>
+    </div>
 {% endblock %}

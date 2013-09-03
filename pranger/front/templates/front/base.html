@@ -1,11 +1,10 @@
 {% load messagegroups %}
 <!doctype html>                                                                                                                                       
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}Page Title{% endblock %}</title>
+    <title>{% block title %}Passwortpranger.ch{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Webrepublic AG">
 
     <!--[if lt IE 9]>
     <script src="{{ STATIC_URL }}js/html5shiv.js"></script>
@@ -13,23 +12,38 @@
     <script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
 
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css">
+        
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
     {% endblock %}
 </head>
 
 <body class="{% block bodyclass %}{% endblock %}">
-
-    <div class="container">
-        <div id="header">
-            {% render_messages messages %}
+    {% render_messages messages %}
+    
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">Liste</a>
+                <a href="#">Seite Melden</a>
+                <a href="#">Infos</a>
+                <a href="#">Gesetzeslage</a>
+            </nav>
         </div>
+    </header>
 
-        <div id="main">
-            {% block content %}{% endblock %}
-        </div>
+    <div id="main">
+        {% block content %}{% endblock %}
     </div>
+
+    <footer>
+        <div class="container">
+            <p>
+            Passwortpranger.ch by <a href="http://twitter.com/dbrgn">@dbrgn</a>, <a href="http://twitter.com/MichiGysel">@MichiGysel</a> und <a href="http://twitter.com/saebersold">@saebersold</a>. Source on <a href="https://github.com/dbrgn/passwortpranger">Github</a>. 
+            </p>
+        </div>
+    </footer>
+
 
     {% block scripts %}
         <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
