@@ -14,6 +14,3 @@ class User(AbstractUser):
         if self.first_name or self.last_name:
             return ' '.join(filter(None, [self.first_name, self.last_name]))
         return self.username
-
-
-# Create your models here.
