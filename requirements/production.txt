@@ -1,0 +1,14 @@
+# Django base system
+Django>=1.5,<1.6
+Unipath
+South
+
+# Databases
+psycopg2
+dj-database-url
+
+# Auth
+django-social-auth
+
+# Frontend
+django-messagegroups

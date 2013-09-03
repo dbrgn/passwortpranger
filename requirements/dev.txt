@@ -1,0 +1,13 @@
+-r production.txt
+
+# Useful stuff
+django-extensions
+
+# Debugging
+django-debug-toolbar
+ipdb
+
+# Testing
+pytest-django
+pytest-cov
+pytest-pep8
