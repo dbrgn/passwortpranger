@@ -7,4 +7,5 @@ from front import views
 
 urlpatterns = patterns('',
     url(r'^$', views.HomeView.as_view(), name='home'),
+    url(r'^legal/$', views.LegalView.as_view(), name='legal'),
 )
