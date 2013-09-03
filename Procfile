@@ -1,1 +1,1 @@
-web: cd pranger && gunicorn config.wsgi -w 5
+web: cd pranger && python manage.py runserver $PORT
