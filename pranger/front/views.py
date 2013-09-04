@@ -10,3 +10,7 @@ from front import models
 class HomeView(ListView):
     model = models.Website
     template_name = 'front/home.html'
+
+
+class LegalView(TemplateView):
+	template_name = 'front/legal.html'
