@@ -8,4 +8,5 @@ from front import views
 urlpatterns = patterns('',
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^legal/$', views.LegalView.as_view(), name='legal'),
+    url(r'^website/(?P<slug>[\w-]+)-(?P<pk>\d+)/$', views.WebsiteView.as_view(), name='website'),
 )

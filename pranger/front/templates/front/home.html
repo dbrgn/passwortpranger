@@ -30,10 +30,10 @@
                 </tr>
             </thead>
             <tbody>
-            {% for website in object_list %}
+            {% for site in object_list %}
                 <tr>
-                    <td>{{ website.name }}</td>
-                    <td>{{ website.url|urlize }}</td>
+                    <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.name }}</a></td>
+                    <td>{{ site.url|urlize }}</td>
                     <td>TBD</td>
                 </tr>
             {% endfor %}

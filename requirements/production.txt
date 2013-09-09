@@ -9,6 +9,8 @@ dj-database-url==0.2.2
 
 # Frontend
 django-messagegroups==0.3.0
+#django-braces==1.2.2
+-e git+https://github.com/dbrgn/django-braces@5be6edeada8f1b511aba50ad96759434f9c6feca#egg=django_braces-dev
 
 # Server
 gunicorn==18.0

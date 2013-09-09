@@ -3,6 +3,7 @@ from __future__ import print_function, division, absolute_import, unicode_litera
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils.text import slugify
 
 
 class User(AbstractUser):
@@ -18,9 +19,9 @@ class User(AbstractUser):
 
 class Website(models.Model):
     TLS_CHOICES = (
-        (0, 'No'),
-        (1, 'Login only'),
-        (2, 'Everywhere'),
+        (0, 'Nein'),
+        (1, 'Nur Login'),
+        (2, 'Überall'),
     )
 
     # Basic properties
@@ -39,6 +40,10 @@ class Website(models.Model):
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
     twofactor = models.NullBooleanField()
+
+    def get_canonical_slug(self):
+        """Canonical slug for the URL."""
+        return slugify(self.name)
 
     def __unicode__(self):
         return self.name
