@@ -5,18 +5,12 @@ body {
 }
 
 /* line 5, ../sass/style.sass */
-.container {
-  margin: 0 auto;
-  width: 960px;
-}
-
-/* line 10, ../sass/style.sass */
 nav {
   display: block;
   @clearfix();
   float: right;
 }
-/* line 15, ../sass/style.sass */
+/* line 10, ../sass/style.sass */
 nav a {
   float: left;
   display: block;
@@ -25,31 +19,35 @@ nav a {
   margin-right: 1em;
   background-color: white;
 }
-/* line 24, ../sass/style.sass */
+/* line 19, ../sass/style.sass */
 nav a:last-child {
   margin: 0;
 }
 
-/* line 29, ../sass/style.sass */
+/* line 24, ../sass/style.sass */
 footer p {
   font-size: 0.8em;
   padding: 1em 0;
   float: right;
   color: #aaaaaa;
 }
-/* line 35, ../sass/style.sass */
+/* line 30, ../sass/style.sass */
 footer p a {
   color: #aaaaaa;
   text-decoration: underline;
 }
 
-/* line 40, ../sass/style.sass */
+/* line 35, ../sass/style.sass */
 .intro {
   padding: 50px;
   background-color: white;
 }
+/* line 39, ../sass/style.sass */
+.intro img {
+  width: 100%;
+}
 
-/* line 44, ../sass/style.sass */
+/* line 42, ../sass/style.sass */
 .data {
   padding: 20px 50px;
   background-color: white;
