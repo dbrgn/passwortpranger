@@ -12,3 +12,8 @@ django-messagegroups==0.3.0
 
 # Server
 gunicorn==18.0
+
+# Static files
+#django-storages==1.1.8
+-e hg+https://bitbucket.org/david/django-storages@e27c8b61ab57e5afaf21cccfee005c980d89480f#egg=django_storages-dev
+boto==2.12.0

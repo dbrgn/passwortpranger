@@ -1,3 +1,6 @@
 # This file is here because many Platforms as a Service (e.g. Heroku) look for
 # requirements.txt in the root directory of a project.
+
+# This magic comment installs mercurial :: hg+
+
 -r requirements/production.txt

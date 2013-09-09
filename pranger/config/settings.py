@@ -73,40 +73,6 @@ USE_TZ = True
 # Path to the project root
 PROJECT_ROOT = Path(__file__).ancestor(2)
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/var/www/example.com/media/"
-MEDIA_ROOT = PROJECT_ROOT.child('media')
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = '/media/'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-STATIC_ROOT = PROJECT_ROOT.child('static')
-
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
-
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
-
-# List of finder classes that know how to find static files in
-# various locations.
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
-
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = env('SECRET_KEY', 'DEBUG_SECRET_KEY')
 if SECRET_KEY == 'DEBUG_SECRET_KEY' and DEBUG is False:
@@ -164,6 +130,7 @@ INSTALLED_APPS = (
     # 3rd party apps
     'south',
     'messagegroups',
+    'storages',
 
     # Own apps
     'front',
@@ -215,6 +182,29 @@ if DEBUG:
 
 # Auth
 AUTH_USER_MODEL = 'front.User'
+
+# Static files
+STATICFILES_DIRS = ()
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+if DEBUG:
+    STATIC_ROOT = PROJECT_ROOT.child('static')
+    MEDIA_ROOT = PROJECT_ROOT.child('media')
+    STATIC_URL = '/static/'
+    MEDIA_URL = '/media/'
+else:
+    AWS_STORAGE_BUCKET_NAME = 'passwortpranger'
+    AWS_PRELOAD_METADATA = True
+    AWS_QUERYSTRING_AUTH = False  # Don't include auth in every url
+    AWS_ACCESS_KEY_ID = require_env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = require_env('AWS_SECRET_ACCESS_KEY')
+    STATIC_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+    MEDIA_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # Testing
 SOUTH_TESTS_MIGRATE = False
