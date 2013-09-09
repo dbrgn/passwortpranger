@@ -23,3 +23,6 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
 class LegalView(TemplateView):
 	template_name = 'front/legal.html'
+
+class InfoView(TemplateView):
+	template_name = 'front/info.html'

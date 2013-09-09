@@ -1,0 +1,74 @@
+{% extends 'front/base.html' %}
+
+{% block bodyclass %}info{% endblock %}
+
+{% block content %}
+    <div class="container intro">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Informationen für Benutzer</h1>
+
+                <p>Wenn du ein paar einfache Regeln beachtest, kannst du unliebsame Überraschungen im Internet vermeiden.</p>
+
+                <ol>
+                    <li>Wähle ein langes Passwort. 8 Zeichen sollten genügen, 10 Zeichen sind besser.</li>
+                    <li>Dein Passwort sollte aus Buchstaben, Zahlen und Sonderzeichen bestehen. Modifikationen von existierenden Worten
+                        (z.B. pa33wort123) sind leicht knackbar und sollten deshalb vermieden werden.</li>
+                    <li>Verwende ein Passwort nur für jeweils eine <a href="http://xkcd.com/792/">einzige Webseite</a>.</li>
+                </ol>
+
+                <p>Natürlich kann sich kein Mensch dutzende Passwörter merken. Genau darum gibt es Tools wie 
+                    <a href="http://keepass.info/">KeePass</a>, 
+                    <a href="http://passwordsafe.sourceforge.net/">Password Safe</a>, 
+                    <a href="https://agilebits.com/onepassword">1Password</a> oder 
+                    <a href="https://lastpass.com/">LastPass</a> um alle deine Passwörter sicher zu verwalten.
+                </p>
+
+            </div>
+        
+            <div class="col-md-6">
+                <h1>Informationen für Entwickler</h1>
+
+                <ol>
+
+                    <li>Passwörter sollten in keinem Fall als Klartext, sondern als <a href="http://de.wikipedia.org/wiki/Hashfunktion">Hash</a> in der Datenbank 
+                        gespeichert werden.</li>
+                    <li>Viele Hashfunktionen wie z.B. MD5 oder SHA1 sind darauf ausgelegt, möglichst schnell berechenbar zu sein. Diese 
+                        werden zwar oft zur Speicherung von Passwörtern verwendet, eigenen sich aber dafür nicht, da sie nur 
+                        einen geringen Schutz bieten. Zur Zeit sichere Algorithmen sind 
+                        <a href="http://de.wikipedia.org/wiki/Bcrypt">Bcrypt</a> und <a href="http://de.wikipedia.org/wiki/PBKDF2">PBKDF2</a>.</li>
+                    <li>Um Wörterbuch- und Brute Force Attacken zu erschweren, sollte unbedingt ein 
+                        <a href="http://de.wikipedia.org/wiki/Salt_(Kryptologie)">Salt</a> und allenfalls ein 
+                        <a href="http://de.wikipedia.org/wiki/Salt_(Kryptologie)#Pfeffer">Pepper</a> in den Hash eingerechnet werden.</li>
+
+                </ol>
+
+                <p>Es gibt verschiedene Bibliotheken in diversen Sprachen um sichere Hashes zu berechnen.</p>
+
+                <table class="table table-striped table-condensed table-bordered">
+                    <tr>
+                        <th></th>
+                        <th>Bcrypt</th>
+                        <th>PBKDF2</th>
+                    </tr>
+                    <tr>
+                        <th>Python</th>
+                        <td><a href="https://code.google.com/p/py-bcrypt/">py-bcrypt</a></td>
+                        <td><a href="https://pypi.python.org/pypi/pbkdf2">pbkdf2</a></td>
+                    </tr>
+                    <tr>
+                        <th>Java</th>
+                        <td><a href="http://www.mindrot.org/projects/jBCrypt/">jBCrypt</a></td>
+                        <td><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#SecretKeyFactory">PBKDF2WithHmacSHA1</a></td>
+                    </tr>
+                    <tr>
+                        <th>PHP</th>
+                        <td colspan="2"><a href="https://github.com/rchouinard/phpass">phpass</a></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
