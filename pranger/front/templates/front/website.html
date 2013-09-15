@@ -6,8 +6,11 @@
     <div class="container intro">
         <h1>{{ site.name }}</h1>
 
+        <p>{{ site.url|urlize }}</p>
+
         {{ site.description|linebreaks|urlize }}
-        {% if site.description %}<br>{% endif %}
+
+        <br>
 
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
