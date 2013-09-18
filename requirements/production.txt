@@ -14,6 +14,7 @@ django-messagegroups==0.4.1
 
 # Server
 gunicorn==18.0
+newrelic==2.0.0.1
 
 # Static files
 #django-storages==1.1.8
