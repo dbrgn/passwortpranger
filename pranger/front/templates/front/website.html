@@ -44,6 +44,18 @@
                     </tr>
 
                     <tr class="active">
+                        <th colspan="2">Passwort per Email</th>
+                    </tr>
+                    <tr>
+                        <th>Passwort in Registrierungsmail</th>
+                        <td>{{ site.eml_reg_plaintext|yesno:"Ja,Nein,Unbekannt" }}</td>
+                    </tr>
+                    <tr>
+                        <th>Passwort in Passwort-Erinnerungsmail</th>
+                        <td>{{ site.eml_remind_plaintext|yesno:"Ja,Nein,Unbekannt" }}</td>
+                    </tr>
+
+                    <tr class="active">
                         <th colspan="2">Sicherheit</th>
                     </tr>
                     <tr>
