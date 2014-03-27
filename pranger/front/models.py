@@ -37,6 +37,12 @@ class Website(models.Model):
     pw_salted = models.NullBooleanField()
     pw_hashfunction = models.CharField(max_length=32, null=True, blank=True)
 
+    # Email
+    eml_reg_plaintext = models.NullBooleanField(
+            help_text='Does the registration email contain the password in plaintext?')
+    eml_remind_plaintext = models.NullBooleanField(
+            help_text='Does the password remainder email contain the password in plaintext?')
+
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
     twofactor = models.NullBooleanField()

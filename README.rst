@@ -1,6 +1,11 @@
 passwortpranger
 ===============
 
+.. image:: https://secure.travis-ci.org/dbrgn/passwortpranger.png?branch=master
+    :alt: Build status
+    :target: http://travis-ci.org/dbrgn/passwortpranger
+
+
 Eine Webplatform, um Firmen die unsorgfältig mit Passwörtern umgehen an den
 virtuellen Pranger zu stellen.
 

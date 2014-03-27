@@ -21,8 +21,5 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
     context_object_name = 'site'
 
 
-class LegalView(TemplateView):
-	template_name = 'front/legal.html'
-
 class InfoView(TemplateView):
-	template_name = 'front/info.html'
+    template_name = 'front/info.html'
