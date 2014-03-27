@@ -87,3 +87,34 @@ footer
 .data
     padding: 20px
     background-color: #fff
+
+.result
+    ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        li
+            margin: 0 0 10px 0
+            padding: 10px
+            color: white
+            @clearfix()
+
+            h4
+                float: left
+
+            span
+                float: right
+
+
+        &.positive
+            li
+                background-color: green
+
+        &.negative
+            li
+                background-color: red
+
+        &.neutral
+            li
+                background-color: gray                

@@ -510,3 +510,37 @@ footer p a, footer p a:hover {
   padding: 20px;
   background-color: white;
 }
+
+/* line 92, ../sass/style.sass */
+.result ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 97, ../sass/style.sass */
+.result ul li {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  color: white;
+  @clearfix();
+}
+/* line 103, ../sass/style.sass */
+.result ul li h4 {
+  float: left;
+}
+/* line 106, ../sass/style.sass */
+.result ul li span {
+  float: right;
+}
+/* line 111, ../sass/style.sass */
+.result ul.positive li {
+  background-color: green;
+}
+/* line 115, ../sass/style.sass */
+.result ul.negative li {
+  background-color: red;
+}
+/* line 119, ../sass/style.sass */
+.result ul.neutral li {
+  background-color: gray;
+}
