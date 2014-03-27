@@ -520,28 +520,71 @@ footer p a, footer p a:hover {
 }
 /* line 98, ../sass/style.sass */
 .result ul li {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   padding: 10px;
-  color: white;
   @clearfix();
+  background-color: #eeeeee;
+  position: relative;
 }
-/* line 104, ../sass/style.sass */
+/* line 105, ../sass/style.sass */
 .result ul li h4 {
-  float: left;
+  margin: 0;
+  font-variant: bold;
+  display: block;
 }
-/* line 107, ../sass/style.sass */
+/* line 110, ../sass/style.sass */
+.result ul li p {
+  color: #666666;
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}
+/* line 115, ../sass/style.sass */
 .result ul li span {
-  float: right;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  font-size: 24px;
 }
-/* line 112, ../sass/style.sass */
-.result ul.positive li {
-  background-color: green;
+/* line 123, ../sass/style.sass */
+.result ul.positive li span {
+  color: green;
 }
-/* line 116, ../sass/style.sass */
-.result ul.negative li {
-  background-color: red;
+/* line 127, ../sass/style.sass */
+.result ul.negative li span {
+  color: red;
 }
-/* line 120, ../sass/style.sass */
-.result ul.neutral li {
-  background-color: gray;
+/* line 131, ../sass/style.sass */
+.result ul.neutral li span {
+  color: blue;
+}
+/* line 134, ../sass/style.sass */
+.result .subtotal {
+  background-color: #666666;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  position: relative;
+}
+/* line 140, ../sass/style.sass */
+.result .subtotal h4, .result .subtotal span, .result .subtotal em, .result .subtotal p {
+  color: white;
+  margin: 0;
+  display: inline;
+}
+/* line 145, ../sass/style.sass */
+.result .subtotal em {
+  font-size: 24px;
+  font-style: normal;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+/* line 152, ../sass/style.sass */
+.result .subtotal span {
+  display: none;
+  font-size: 12px;
+}
+/* line 156, ../sass/style.sass */
+.result .subtotal p {
+  display: block;
+  font-size: 14px;
 }

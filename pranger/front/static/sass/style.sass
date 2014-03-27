@@ -96,26 +96,63 @@ footer
         padding: 0
 
         li
-            margin: 0 0 10px 0
+            margin: 0 0 20px 0
             padding: 10px
-            color: white
             @clearfix()
+            background-color: #eee
+            position: relative
 
             h4
-                float: left
+                margin: 0
+                font-variant: bold
+                display: block
+
+            p
+                color: #666
+                margin: 5px 0 0 0
+                font-size: 14px
 
             span
-                float: right
+                position: absolute
+                top: 16px
+                right: 10px
+                font-size: 24px
 
 
         &.positive
-            li
-                background-color: green
+            li span
+                color: green
 
         &.negative
-            li
-                background-color: red
+            li span
+                color: red
 
         &.neutral
-            li
-                background-color: gray                
+            li span
+                color: blue
+
+    .subtotal
+        background-color: #666
+        margin: 0 0 20px 0
+        padding: 10px
+        position: relative
+
+        h4, span, em, p
+            color: #fff
+            margin: 0
+            display: inline
+
+        em
+            font-size: 24px
+            font-style: normal
+            position: absolute
+            top: 15px
+            right: 10px
+
+        span
+            display: none
+            font-size: 12px
+
+        p
+            display: block
+            font-size: 14px
