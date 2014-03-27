@@ -22,4 +22,4 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
 
 class InfoView(TemplateView):
-	template_name = 'front/info.html'
+    template_name = 'front/info.html'
