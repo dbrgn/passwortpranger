@@ -4,22 +4,17 @@
 
 {% block content %}
     <div class="container intro">
-        <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>Achtung:</strong> Diese Seite ist noch in Entwicklung.
-        </div>
+        
         <div class="row">
-            <div class="col-md-4">
-                <img src="{{ STATIC_URL }}img/pillory.png" alt="Pranger">
-            </div>
-            <div class="col-md-8">
-                <h1>Passwortpranger</h1>
+            <div class="col-md-9">
+                <h2>Was ist der Passwortpranger?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, veniam, voluptatem maxime totam repellat earum voluptate enim nihil autem iste eligendi ut perferendis maiores impedit aut. Enim molestias assumenda iste!</p>
             </div>
+            <div class="col-md-2 col-md-offset-1">
+                <img src="{{ STATIC_URL }}img/pillory.png" alt="Pranger">
+            </div>            
         </div>
-    </div>
-    <br>
-    <div class="container data">
+
         <h2>Prangerliste</h2>
         <table class="table table-hover">
             <thead>
