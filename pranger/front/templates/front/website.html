@@ -18,109 +18,148 @@
                     <ul class="positive">
                         {% if "TLS_FORCED" in scores.positive %}
                             <li>
-                                <h4>TLS Forces</h4> <span>+{{ scores.positive.TLS_FORCED }}</span>
+                                <h4>
+                                    Eine TLS/SSL (TODO überall Link auf Wikipedia) Verbindung wird auf der
+                                    ganzen Webseite erzwungen.
+                                </h4> 
+                                <span>+{{ scores.positive.TLS_FORCED }}</span>
 
-                                <p>description</p>
+                                <p>Indem die Verbindung konsequent verschlüsselt wird, können auch auf unsicheren Netzwerken sensitive Daten geheim gehalten werden.</p>
                             </li>
                         {% endif %}
                         {% if "TWO_FACTOR" in scores.positive %}
                             <li>
-                                <h4>TLS Forces</h4> <span>+{{ scores.positive.TWO_FACTOR }}</span>
+                                <h4>
+                                    Eine Authentisierung mittels einem zweiten Sicherheitselement
+                                    wird angeboten.
+                                </h4>
+                                <span>+{{ scores.positive.TWO_FACTOR }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung</p>
                             </li>
                         {% endif %}
                         {% if "SECURITY_WIDGET" in scores.positive %}
                             <li>
-                                <h4>TLS Forces</h4> <span>+{{ scores.positive.SECURITY_WIDGET }}</span>
+                                <h4>
+                                    Die Passwortstärke wird mittels einem grafischen Indikator visualisiert.
+                                </h4>
+                                <span>+{{ scores.positive.SECURITY_WIDGET }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung</p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_UNLIMITED" in scores.positive %}
                             <li>
-                                <h4>TLS Forces</h4> <span>+{{ scores.positive.MAX_LEN_UNLIMITED }}</span>
+                                <h4>
+                                    Die maxmiale Länge des Passworts ist nicht beschränkt.
+                                </h4>
+                                <span>+{{ scores.positive.MAX_LEN_UNLIMITED }}</span>
 
-                                <p>description</p>
+                                <p>Dies deutet auf eine Speicherung des Passwortes mittels einer dafür geeigneten Hashfunktion hin.</p>
                             </li>
                         {% endif %}
                     </ul>
                     <div class="subtotal positive">
                         <h4>Positive Punkte</h4> <span>17</span><em>6</em>
 
-                        <p>description</p>
+                        <p>Es zählen maximal 6 positive Punkte zur Gesamtwertung</p>
                     </div>
                     <ul class="negative">
                         {% if "MAX_LEN_16" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_16</h4> <span>{{ scores.negative.MAX_LEN_16 }}</span>
+                                <h4>Die Länge des Passworts ist auf 16 Zeichen beschränkt.</h4> 
+                                <span>{{ scores.negative.MAX_LEN_16 }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung</p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_10" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.MAX_LEN_10 }}</span>
+                                <h4>Die Länge des Passworts ist auf 10 Zeichen beschränkt</h4>
+                                <span>{{ scores.negative.MAX_LEN_10 }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung</p>
                             </li>
                         {% endif %}
                         {% if "ALPHABET_LIMITED" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.ALPHABET_LIMITED }}</span>
+                                <h4>
+                                    Das Passwort kann nur aus einer limitierten Anzahl verschiedener Zeichen bestehen.
+                                </h4>
+                                <span>{{ scores.negative.ALPHABET_LIMITED }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung: je mehr Zeichen, desto mehr Entropie!</p>
                             </li>
                         {% endif %}
                         {% if "PW_IN_REGISTRATION_MAIL" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.PW_IN_REGISTRATION_MAIL }}</span>
+                                <h4>Das Passwort wird im Registrierungsmail verschickt.</h4> 
+                                <span>{{ scores.negative.PW_IN_REGISTRATION_MAIL }}</span>
 
-                                <p>description</p>
+                                <p>TODO Beschreibung: Email ist unsicher!</p>
                             </li>
                         {% endif %}
                         {% if "NEW_PW_IN_REMEMBER_MAIL" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.NEW_PW_IN_REMEMBER_MAIL }}</span>
+                                <h4>Ein neues Passwort wird direkt per Email verschickt.</h4> 
+                                <span>{{ scores.negative.NEW_PW_IN_REMEMBER_MAIL }}</span>
 
-                                <p>description</p>
+                                <p>Mail ist unsicher! Das Passwort könnte abgefangen werden.</p>
                             </li>
                         {% endif %}
                         {% if "OWN_PW_IN_REMEMBER_MAIL" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.OWN_PW_IN_REMEMBER_MAIL }}</span>
+                                <h4>
+                                    Man kann sich sein eigenes Passwort im Klartext per Email zuschicken lassen.
+                                </h4>
+                                <span>{{ scores.negative.OWN_PW_IN_REMEMBER_MAIL }}</span>
 
-                                <p>description</p>
+                                <p>
+                                    Das Passwort wird im Klartext gespeichert. Das kann ziemlich
+                                    üble Folgen haben.
+                                </p>
                             </li>
                         {% endif %}
                         {% if "TLS_NO" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.TLS_NO }}</span>
+                                <h4>Die Seite unterstützt gar kein TLS/SSL.</h4> 
+                                <span>{{ scores.negative.TLS_NO }}</span>
 
-                                <p>description</p>
+                                <p>
+                                    Das Passwort wird beim Login im Klartext übertragen und
+                                    kann abgefangen werden.
+                                </p>
                             </li>
                         {% endif %}
                         {% if "TLS_SOME" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_10</h4> <span>{{ scores.negative.TLS_SOME }}</span>
+                                <h4>Einige Seiten werden unverschlüsselt übertragen.</h4> 
+                                <span>{{ scores.negative.TLS_SOME }}</span>
 
-                                <p>description</p>
+                                <p>Es können sensitive Daten einer Session abgefangen werden.</p>
                             </li>
                         {% endif %}
                     </ul>
                     <div class="subtotal negative">
-                        <h4>Negative Punkte</h4> <span>17</span><em>6</em>
-                        <p>description</p>
+                        <h4>Negative Punkte</h4> <span>17</span><em>-6</em>
+                        <p>Es zählen maximal 6 negative Punkte zur Gesamtwertung und die Wertung kann auch keinen negativen Wert annehmen.</p>
                     </div>
                      <ul class="neutral">
                         {% if "TLS_ALL" in scores.negative %}
                             <li>
-                                <h4>MAX_LEN_16</h4> <span>+{{ scores.positive.TLS_ALL }}</span>
+                                <h4>
+                                    Es werden alle Seiten über TLS/SSL angeboten, der Besucher wird
+                                    aber nicht automatisch auf diese Seiten weitergeleitet.
+                                 </h4> 
+                                 <span>+{{ scores.positive.TLS_ALL }}</span>
 
-                                <p>description</p>
+                                <p>Keine Negativpunkte, aber auch keine Pluspunkte.</p>
                             </li>
                         {% endif %}
                      </ul>
+                     <div class="total">
+                        Total Punkte: {{ scores.sum }}
+                     </div>
                 </div>
 
             </div>
