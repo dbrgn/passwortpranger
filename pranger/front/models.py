@@ -20,7 +20,7 @@ class User(AbstractUser):
 class Website(models.Model):
     TLS_CHOICES = (
         (0, 'Nein'),
-        (1, 'Nur Login'),
+        (1, 'Partiell'),
         (2, 'Überall'),
         (3, 'Forced')
     )
@@ -61,26 +61,3 @@ class Website(models.Model):
         return self.name
 
 
-class Bewertung():
-    BASE_POINTS = 3
-    PW_MAX_LENGTH = (
-        (0, -1),
-        (1, -2),
-        (2, 1)
-    )
-    ALPHABET_SIZE_RESTRICTED = -1
-    NEW_PASSWORD_IN_REMBMER_MAIL = -1
-    OWN_PASSWORD_IN_REMBMER_MAIL = -3
-    OWN_PASSWORD_IN_REGISTER_MAIL = -1
-    TLS_SCORE = (
-        (0, -2),
-        (1, -1),
-        (2, 0),
-        (3, 1)
-    )
-    TWO_FACTOR = 3
-    SECURITY_WIDGET = 1
-
-    actual_points = 0
-    def __init__(self, website):
-        self.actual_points = self.BASE_POINTS + self.PW_MAX_LENGTH[website.pw_max_length]

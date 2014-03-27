@@ -14,59 +14,10 @@
 
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
-                <table class="table table-hover">
-                    <tr class="active">
-                        <th colspan="2">Passwort</th>
-                    </tr>
-                    <tr>
-                        <th>Speichern im Klartext</th>
-                        <td>{{ site.pw_plaintext|yesno:"Ja,Nein,Unbekannt" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mindestlänge</th>
-                        <td>{{ site.pw_min_length|default:"Unlimitiert" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Maximallänge</th>
-                        <td>{{ site.pw_max_length|default:"Unlimitiert" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mögliche Zeichen</th>
-                        <td>{{ site.pw_alphabet_size|default:"Unlimitiert" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Salted</th>
-                        <td>{{ site.pw_salted|yesno:"Ja,Nein,Unbekannt" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Hash-Funktion</th>
-                        <td>{{ site.pw_hashfunction|default:"Unbekannt" }}</td>
-                    </tr>
+                {{ scores | pprint }}
+                {%  for s in scores.positive.items() %}
 
-                    <tr class="active">
-                        <th colspan="2">Passwort per Email</th>
-                    </tr>
-                    <tr>
-                        <th>Passwort in Registrierungsmail</th>
-                        <td>{{ site.eml_reg_plaintext|yesno:"Ja,Nein,Unbekannt" }}</td>
-                    </tr>
-                    <tr>
-                        <th>Passwort in Passwort-Erinnerungsmail</th>
-                        <td>{{ site.eml_remind_plaintext|yesno:"Ja,Nein,Unbekannt" }}</td>
-                    </tr>
-
-                    <tr class="active">
-                        <th colspan="2">Sicherheit</th>
-                    </tr>
-                    <tr>
-                        <th>SSL / TLS</th>
-                        <td>{{ site.get_tls_display }}</td>
-                    </tr>
-                    <tr>
-                        <th>2-Faktor Authentisierung</th>
-                        <td>{{ site.twofactor|yesno:"Ja,Nein,Unbekannt" }}</td>
-                    </tr>
-                </table>
+                {% endfor %}
             </div>
         </div>
     </div>
