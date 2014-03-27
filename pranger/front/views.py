@@ -11,6 +11,7 @@ from braces.views import CanonicalSlugDetailMixin
 
 from . import models
 
+
 class HomeView(ListView):
     model = models.Website
     template_name = 'front/home.html'
@@ -27,41 +28,42 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
         scores = defaultdict(dict)
 
         if website.pw_max_length == 0:
-            scores["negative"]["MAX_LEN_16"] = -1
+            scores['negative']['MAX_LEN_16'] = -1
 
         elif website.pw_max_length == 1:
-            scores["negative"]["MAX_LEN_10"] = -2
+            scores['negative']['MAX_LEN_10'] = -2
         elif website.pw_max_length == 3:
-            scores["positive"]["MAX_LEN_UNLIMITED"] = 1
+            scores['positive']['MAX_LEN_UNLIMITED'] = 1
 
-        if website.pw_alphabet_size_restricted:
-            scores["negative"]["ALPHABET_LIMITED"] = -1
+        if website.alphabet_limited:
+            scores['negative']['ALPHABET_LIMITED'] = -1
 
-        if website.new_user_mail_has_own_password:
-            scores["negative"]["PW_IN_REGISTRATION_MAIL"] = -1
+        if website.eml_registration_plaintext:
+            scores['negative']['PW_IN_REGISTRATION_MAIL'] = -1
 
-        if website.remember_mail_has_new_password:
-            scores["negative"]["NEW_PW_IN_REMEMBER_MAIL"] = -1
+        if website.eml_recover_plaintext:
+            scores['negative']['NEW_PW_IN_REMEMBER_MAIL'] = -1
 
-        if website.remember_mail_has_own_password:
-            scores["negative"]["OWN_PW_IN_REMEMBER_MAIL"] = -3
+        if website.eml_remind_plaintext:
+            scores['negative']['OWN_PW_IN_REMEMBER_MAIL'] = -3
 
         if website.tls == 0:
-            scores["negative"]["TLS_NO"] = -2
+            scores['negative']['TLS_NO'] = -2
         elif website.tls == 1:
-            scores["negative"]["TLS_SOME"] = -1
+            scores['negative']['TLS_SOME'] = -1
         elif website.tls == 2:
-            scores["hint"]["TLS_ALL"] = 0
+            scores['hint']['TLS_ALL'] = 0
         elif website.tls == 3:
-            scores["positive"]["TLS_FORCED"] = 1
+            scores['positive']['TLS_FORCED'] = 1
 
         if website.twofactor:
-            scores["positive"]["TWO_FACTOR"] = 3
+            scores['positive']['TWO_FACTOR'] = 3
 
         if website.securitywidget:
-            scores["positive"]["SECURITY_WIDGET"] = 1
-        scores["sum"] = self.calculate(scores["positive"].itervalues(), scores["negative"].itervalues())
-        context["scores"] = scores
+            scores['positive']['SECURITY_WIDGET'] = 1
+        scores['sum'] = self.calculate(scores['positive'].itervalues(),
+                                       scores['negative'].itervalues())
+        context['scores'] = scores
         return context
 
     @staticmethod
@@ -77,5 +79,3 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
 class InfoView(TemplateView):
     template_name = 'front/info.html'
-
-

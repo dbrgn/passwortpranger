@@ -36,28 +36,24 @@ class Website(models.Model):
 
     # Password
     pw_max_length = models.SmallIntegerField(choices=PW_MAX_LENGTH_CHOICES)
-    pw_alphabet_size_restricted = models.BooleanField()
-
-    #delivery
-    remember_mail_has_own_password = models.BooleanField()
-    remember_mail_has_new_password = models.BooleanField()
-    new_user_mail_has_own_password = models.BooleanField()
+    alphabet_limited = models.BooleanField()
 
     # Email
-    eml_reg_plaintext = models.NullBooleanField(
-            help_text='Does the registration email contain the password in plaintext?')
+    eml_registration_plaintext = models.NullBooleanField(
+        help_text='Does the registration email contain the password in plaintext?')
     eml_remind_plaintext = models.NullBooleanField(
-            help_text='Does the password remainder email contain the password in plaintext?')
+        help_text='Does the password reminder email contain the user password in plaintext?')
+    eml_recover_plaintext = models.NullBooleanField(
+        help_text='Does the password recovery email contain a temporary password in plaintext?')
 
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
     twofactor = models.NullBooleanField()
     securitywidget = models.BooleanField()
+
     def get_canonical_slug(self):
         """Canonical slug for the URL."""
         return slugify(self.name)
 
     def __unicode__(self):
         return self.name
-
-
