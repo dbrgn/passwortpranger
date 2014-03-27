@@ -15,8 +15,10 @@
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
                 {{ scores | pprint }}
-                {%  for s in scores.positive.items() %}
-
+                {%  for k, v in scores.positive.items %}
+                    <div>
+                    {{ k }} -> {{ v }}
+                    </div>
                 {% endfor %}
             </div>
         </div>
