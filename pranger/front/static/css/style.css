@@ -447,22 +447,23 @@ header {
   padding: 20px;
 }
 /* line 37, ../sass/style.sass */
-header h1 {
+header h1 a {
   color: white;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 0;
   float: left;
+  font-size: 36px;
   line-height: 36px;
   font-weight: 300;
 }
-/* line 46, ../sass/style.sass */
+/* line 47, ../sass/style.sass */
 header nav {
   display: block;
   @clearfix();
   float: right;
 }
-/* line 51, ../sass/style.sass */
+/* line 52, ../sass/style.sass */
 header nav a {
   float: left;
   display: block;
@@ -472,75 +473,75 @@ header nav a {
   background-color: #9b0b03;
   color: white;
 }
-/* line 60, ../sass/style.sass */
+/* line 61, ../sass/style.sass */
 header nav a:hover {
   color: white;
 }
-/* line 63, ../sass/style.sass */
+/* line 64, ../sass/style.sass */
 header nav a:last-child {
   margin: 0;
 }
 
-/* line 68, ../sass/style.sass */
+/* line 69, ../sass/style.sass */
 footer p {
   font-size: 12px;
   padding: 1em 0;
   float: right;
   color: #bf8380;
 }
-/* line 74, ../sass/style.sass */
+/* line 75, ../sass/style.sass */
 footer p a, footer p a:hover {
   font-size: 12px;
   color: #bf8380;
   text-decoration: underline;
 }
 
-/* line 80, ../sass/style.sass */
+/* line 81, ../sass/style.sass */
 .intro {
   padding: 20px;
   background-color: white;
 }
-/* line 84, ../sass/style.sass */
+/* line 85, ../sass/style.sass */
 .intro img {
   width: 100%;
 }
 
-/* line 87, ../sass/style.sass */
+/* line 88, ../sass/style.sass */
 .data {
   padding: 20px;
   background-color: white;
 }
 
-/* line 92, ../sass/style.sass */
+/* line 93, ../sass/style.sass */
 .result ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 97, ../sass/style.sass */
+/* line 98, ../sass/style.sass */
 .result ul li {
   margin: 0 0 10px 0;
   padding: 10px;
   color: white;
   @clearfix();
 }
-/* line 103, ../sass/style.sass */
+/* line 104, ../sass/style.sass */
 .result ul li h4 {
   float: left;
 }
-/* line 106, ../sass/style.sass */
+/* line 107, ../sass/style.sass */
 .result ul li span {
   float: right;
 }
-/* line 111, ../sass/style.sass */
+/* line 112, ../sass/style.sass */
 .result ul.positive li {
   background-color: green;
 }
-/* line 115, ../sass/style.sass */
+/* line 116, ../sass/style.sass */
 .result ul.negative li {
   background-color: red;
 }
-/* line 119, ../sass/style.sass */
+/* line 120, ../sass/style.sass */
 .result ul.neutral li {
   background-color: gray;
 }
