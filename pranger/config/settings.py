@@ -26,7 +26,7 @@ true_values = ['1', 'true', 'y', 'yes', 1, True]
 
 # Main configuration
 
-DEBUG = require_env('DJANGO_DEBUG').lower() in true_values
+DEBUG = env('DJANGO_DEBUG', 'False').lower() in true_values
 TEMPLATE_DEBUG = DEBUG
 SHOW_DEBUG_TOOLBAR = DEBUG
 
