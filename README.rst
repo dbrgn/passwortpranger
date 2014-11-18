@@ -29,7 +29,6 @@ Set environment variables::
 
     POSTACTIVATE=$VIRTUAL_ENV/$VIRTUALENVWRAPPER_ENV_BIN_DIR/postactivate
     echo "export DJANGO_DEBUG=True" >> $POSTACTIVATE
-    echo "export PORT=8000" >> $POSTACTIVATE
     echo "export DATABASE_URL='postgres://localhost/pranger'" >> $POSTACTIVATE
     source $POSTACTIVATE
 
