@@ -1,5 +1,5 @@
 # Django base system
-Django==1.6.8
+Django==1.7.1
 Unipath==1.0
 
 # Databases
