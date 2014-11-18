@@ -36,7 +36,8 @@ class Website(models.Model):
 
     # Password
     pw_max_length = models.SmallIntegerField(choices=PW_MAX_LENGTH_CHOICES)
-    alphabet_limited = models.BooleanField()
+    alphabet_limited = models.NullBooleanField(
+        help_text='Is the password alphabet limited?')
 
     # Email
     eml_registration_plaintext = models.NullBooleanField(
@@ -48,8 +49,9 @@ class Website(models.Model):
 
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
-    twofactor = models.NullBooleanField()
-    securitywidget = models.BooleanField()
+    twofactor = models.NullBooleanField(
+        help_text='Does the website offer some kind of 2 factor authentication?')
+    securitywidget = models.NullBooleanField()
 
     def get_canonical_slug(self):
         """Canonical slug for the URL."""
