@@ -9,7 +9,7 @@ addons:
   postgresql: "9.3"
 before_script:
   - psql -c 'create database pranger;' -U postgres
-  - ./manage.py syncdb --noinput
-  - ./manage.py migrate --noinput
+  - ( cd pranger && ./manage.py syncdb --noinput )
+  - ( cd pranger && ./manage.py migrate --noinput )
 script:
-  - cd pranger && python runtests.py
+  - ( cd pranger && python runtests.py )
