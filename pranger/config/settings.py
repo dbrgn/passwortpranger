@@ -210,7 +210,9 @@ else:
 SOUTH_TESTS_MIGRATE = False
 
 # Debug toolbar
+def show_debug_toolbar(request):
+    return DEBUG
 DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': lambda request: SHOW_DEBUG_TOOLBAR
+    'SHOW_TOOLBAR_CALLBACK': 'config.settings.show_debug_toolbar',
 }
+DEBUG_TOOLBAR_PATCH_SETTINGS = False

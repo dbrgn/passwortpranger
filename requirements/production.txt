@@ -1,22 +1,21 @@
 # Django base system
 Django==1.6.8
 Unipath==1.0
-South==0.8.2
+South==1.0.1
 
 # Databases
-psycopg2==2.5.1
-dj-database-url==0.2.2
+psycopg2==2.5.4
+dj-database-url==0.3.0
 
 # Frontend
-django-messagegroups==0.4.1
-#django-braces==1.2.2
--e git+https://github.com/dbrgn/django-braces@5be6edeada8f1b511aba50ad96759434f9c6feca#egg=django_braces-dev
+django-messagegroups==0.4.3
+django-braces==1.4.0
 
 # Server
-gunicorn==18.0
-newrelic==2.0.0.1
+gunicorn==19.1.1
+newrelic==2.38.0.31
 
 # Static files
 #django-storages==1.1.8
 -e hg+https://bitbucket.org/david/django-storages@e27c8b61ab57e5afaf21cccfee005c980d89480f#egg=django_storages-dev
-boto==2.13.0
+boto==2.34.0

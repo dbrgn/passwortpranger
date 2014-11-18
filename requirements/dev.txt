@@ -4,10 +4,11 @@
 django-extensions
 
 # Debugging
-django-debug-toolbar
+django-debug-toolbar==1.2.2
 ipdb
 
 # Testing
+pytest
 pytest-django
 pytest-cov
 pytest-pep8
