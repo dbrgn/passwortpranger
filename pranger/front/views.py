@@ -69,7 +69,7 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
     @staticmethod
     def calculate(positive, negative):
-        sum_pos = sum(positive)
+        sum_pos = 4 + sum(positive)
         if sum_pos > 6:
             sum_pos = 6
         sum_neg = sum(negative)
