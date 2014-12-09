@@ -63,18 +63,19 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
             scores['positive']['SECURITY_WIDGET'] = 1
         scores['sum'] = self.calculate(scores['positive'].itervalues(),
                                        scores['negative'].itervalues())
+
         context['scores'] = scores
         return context
 
     @staticmethod
     def calculate(positive, negative):
-        score = sum(positive)
-        if score > 6:
-            score = 6
-        score += sum(negative)
-        if score < 0:
-            score = 0
-        return score
+        sum_pos = sum(positive)
+        if sum_pos > 6:
+            sum_pos = 6
+        sum_neg = sum(negative)
+        if sum_neg < -6:
+            sum_neg = -6
+        return {'positive': sum_pos, 'negative': sum_neg, 'total': sum_neg + sum_pos}
 
 
 class InfoView(TemplateView):
