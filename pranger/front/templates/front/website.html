@@ -91,7 +91,7 @@
                                 <h4>Die Länge des Passworts ist auf 16 Zeichen beschränkt.</h4>
                                 <span>{{ scores.negative.MAX_LEN_16 }}</span>
 
-                                <p>TODO Beschreibung</p>
+                                <p>Eine Beschränkung der Länge des Passworts reduziert die Anzahl möglichen Passwörter und vereinfacht es somit, das Passwort zu knacken. Bei einer sauberen Speicherung des Passworts, muss die Länge überhaupt nicht beschränkt werden.</p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_10" in scores.negative %}
@@ -99,7 +99,7 @@
                                 <h4>Die Länge des Passworts ist auf 10 Zeichen beschränkt</h4>
                                 <span>{{ scores.negative.MAX_LEN_10 }}</span>
 
-                                <p>TODO Beschreibung</p>
+                                <p>Eine Beschränkung der Länge des Passworts reduziert die Anzahl möglichen Passwörter und vereinfacht es somit, das Passwort zu knacken. Bei einer sauberen Speicherung des Passworts, muss die Länge überhaupt nicht beschränkt werden.</p>
                             </li>
                         {% endif %}
                         {% if "ALPHABET_LIMITED" in scores.negative %}
@@ -109,7 +109,7 @@
                                 </h4>
                                 <span>{{ scores.negative.ALPHABET_LIMITED }}</span>
 
-                                <p>TODO Beschreibung: je mehr Zeichen, desto mehr Entropie!</p>
+                                <p>Wird die Verwendung spezieller Zeichen, wie zum Beispiel exotischer Sonderzeichen, unterbunden, gibt es bei gleicher Passwortlänge eine deutlich kleinere Anzahl möglicher Passwörter. Dies vereinfacht es, das Passwort zu knacken.</p>
                             </li>
                         {% endif %}
                         {% if "PW_IN_REGISTRATION_MAIL" in scores.negative %}
