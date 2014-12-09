@@ -3,8 +3,10 @@ from __future__ import print_function, division, absolute_import, unicode_litera
 
 from collections import defaultdict
 
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
 from braces.views import CanonicalSlugDetailMixin
@@ -83,3 +85,14 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
 class InfoView(TemplateView):
     template_name = 'front/info.html'
+
+
+class SubmissionView(CreateView):
+    model = models.Submission
+    fields = ['url', 'email', 'comment']
+    template_name = 'front/submission.html'
+    success_url = reverse_lazy('submission_thanks')
+
+
+class SubmissionThanksView(TemplateView):
+    template_name = 'front/submission_thanks.html'

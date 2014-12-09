@@ -73,12 +73,13 @@ class Submission(models.Model):
     )
 
     # Submission data
-    url = models.URLField(
-        help_text='The URL of the website')
-    email = models.EmailField(null=True, blank=True,
-        help_text='Your e-mail address')
-    comments = models.TextField(null=True, blank=True,
-        help_text='Any comments')
+    url = models.URLField(help_text='The URL of the website')
+    email = models.EmailField(null=True, blank=True, help_text='Your e-mail address')
+    comment = models.TextField(null=True, blank=True, help_text='Any comments')
 
     # Workflow
-    status = models.CharField(max_length=16, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='new')
+    submit_date = models.DateTimeField('Submit date', auto_now_add=True)
+
+    def __unicode__(self):
+        return self.url
