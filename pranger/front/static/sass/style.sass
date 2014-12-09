@@ -1,5 +1,5 @@
 @import "normalize"
-
+$background-color: #d6081c
 =total()
     h4, span, em, p
         color: #fff
@@ -53,7 +53,7 @@ body
 header 
     position: relative
     @clearfix()
-    background-color: #d6081c
+    background-color: $background-color
     padding: 20px
 
 
@@ -144,10 +144,14 @@ footer
 
 
         &.positive
+            div
+                background-color: green
             li span
                 color: green
 
         &.negative
+            div
+                background-color: red
             li span
                 color: red
 
@@ -164,7 +168,7 @@ footer
         +total()
 
     .total
-        background-color: #101010
+        //background-color: #101010
         margin: 0 0 20px 0
         padding: 10px
         position: relative
@@ -172,5 +176,24 @@ footer
         +total()
 
 
+//@for $var from 0 through 6
+//    $numericValue: 36
+//    .score-#{$var}
+//        $greenValue: $var * $numericValue
+//        $redValue: $numericValue * (6 - $var)
+//        background-color: change_color(#ffff00,$red: $redValue, $green: $greenValue)
 
-
+.score-0
+    background-color: $background-color
+.score-1
+    background-color: $background-color
+.score-2
+    background-color: orange
+.score-3
+    background-color: orange
+.score-4
+    background-color: greenyellow
+.score-5
+    background-color: green
+.score-6
+    background-color: darkgreen

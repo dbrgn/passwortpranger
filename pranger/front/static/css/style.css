@@ -552,18 +552,26 @@ footer p a, footer p a:hover {
   font-size: 24px;
 }
 /* line 147, style.sass */
+.result ul.positive div {
+  background-color: green;
+}
+/* line 149, style.sass */
 .result ul.positive li span {
   color: green;
 }
-/* line 151, style.sass */
+/* line 153, style.sass */
+.result ul.negative div {
+  background-color: red;
+}
+/* line 155, style.sass */
 .result ul.negative li span {
   color: red;
 }
-/* line 155, style.sass */
+/* line 159, style.sass */
 .result ul.neutral li span {
   color: blue;
 }
-/* line 158, style.sass */
+/* line 162, style.sass */
 .result .subtotal {
   background-color: #666;
   margin: 0 0 20px 0;
@@ -595,9 +603,8 @@ footer p a, footer p a:hover {
   font-size: 14px;
   max-width: 93%;
 }
-/* line 166, style.sass */
+/* line 170, style.sass */
 .result .total {
-  background-color: #101010;
   margin: 0 0 20px 0;
   padding: 10px;
   position: relative;
@@ -627,6 +634,41 @@ footer p a, footer p a:hover {
   display: block;
   font-size: 14px;
   max-width: 93%;
+}
+
+/* line 186, style.sass */
+.score-0 {
+  background-color: #d6081c;
+}
+
+/* line 188, style.sass */
+.score-1 {
+  background-color: #d6081c;
+}
+
+/* line 190, style.sass */
+.score-2 {
+  background-color: orange;
+}
+
+/* line 192, style.sass */
+.score-3 {
+  background-color: orange;
+}
+
+/* line 194, style.sass */
+.score-4 {
+  background-color: greenyellow;
+}
+
+/* line 196, style.sass */
+.score-5 {
+  background-color: green;
+}
+
+/* line 198, style.sass */
+.score-6 {
+  background-color: darkgreen;
 }
 
 /*# sourceMappingURL=style.css.map */

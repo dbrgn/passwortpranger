@@ -15,16 +15,30 @@
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="result">
+                    <div class="total score-{{ scores.sum.total }}">
+                        <h4>Gesamtwertung</h4> <em>{{ scores.sum.total }}/6</em>
+
+                        <p>Die Gesamtbewertung von {{ site.name }}</p>
+                    </div>
+                    {% if scores.positive %}
+                        <div class="subtotal positive">
+                            <h4>Positive Punkte</h4> <span>17</span><em>{{ scores.sum.positive }}/6</em>
+
+                            <p>Es zählen maximal 6 positive Punkte zur Gesamtwertung</p>
+                        </div>
+                    {% endif %}
                     <ul class="positive">
                         {% if "TLS_FORCED" in scores.positive %}
                             <li>
                                 <h4>
-                                    Eine <a href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a> Verbindung wird auf der
+                                    Eine <a href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>
+                                    Verbindung wird auf der
                                     ganzen Webseite erzwungen.
-                                </h4> 
+                                </h4>
                                 <span>+{{ scores.positive.TLS_FORCED }}</span>
 
-                                <p>Indem die Verbindung konsequent verschlüsselt wird, können auch auf unsicheren Netzwerken sensitive Daten geheim gehalten werden.</p>
+                                <p>Indem die Verbindung konsequent verschlüsselt wird, können auch auf unsicheren
+                                    Netzwerken sensitive Daten geheim gehalten werden.</p>
                             </li>
                         {% endif %}
                         {% if "TWO_FACTOR" in scores.positive %}
@@ -35,7 +49,9 @@
                                 </h4>
                                 <span>+{{ scores.positive.TWO_FACTOR }}</span>
 
-                                <p>Der Nutzer muss etwas wissen (in der Regel ein Passwort) und etwas haben (meist ein Sicherheitstoken, bzw. ein vertrauenswürdiges Gerät). Damit wird die Sicherheit stark verbessert.</p>
+                                <p>Der Nutzer muss etwas wissen (in der Regel ein Passwort) und etwas haben (meist ein
+                                    Sicherheitstoken, bzw. ein vertrauenswürdiges Gerät). Damit wird die Sicherheit
+                                    stark verbessert.</p>
                             </li>
                         {% endif %}
                         {% if "SECURITY_WIDGET" in scores.positive %}
@@ -45,7 +61,8 @@
                                 </h4>
                                 <span>+{{ scores.positive.SECURITY_WIDGET }}</span>
 
-                                <p>Der Nutzer sieht die Stärke seines Passwortes direkt und wird dazu motiviert, ein starkes Passwort zu wählen.</p>
+                                <p>Der Nutzer sieht die Stärke seines Passwortes direkt und wird dazu motiviert, ein
+                                    starkes Passwort zu wählen.</p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_UNLIMITED" in scores.positive %}
@@ -55,21 +72,23 @@
                                 </h4>
                                 <span>+{{ scores.positive.MAX_LEN_UNLIMITED }}</span>
 
-                                <p>Dies deutet auf eine Speicherung des Passwortes mittels einer dafür geeigneten Hashfunktion hin.</p>
+                                <p>Dies deutet auf eine Speicherung des Passwortes mittels einer dafür geeigneten
+                                    Hashfunktion hin.</p>
                             </li>
                         {% endif %}
                     </ul>
-                    {% if scores.positive %}
-                    <div class="subtotal positive">
-                        <h4>Positive Punkte</h4> <span>17</span><em>{{ scores.sum.positive }}/6</em>
+                    {% if scores.negative %}
+                        <div class="subtotal negative">
+                            <h4>Negative Punkte</h4> <span>17</span><em>{{ scores.sum.negative }}/-6</em>
 
-                        <p>Es zählen maximal 6 positive Punkte zur Gesamtwertung</p>
-                    </div>
+                            <p>Es zählen maximal 6 negative Punkte zur Gesamtwertung und die Wertung kann auch keinen
+                                negativen Wert annehmen.</p>
+                        </div>
                     {% endif %}
                     <ul class="negative">
                         {% if "MAX_LEN_16" in scores.negative %}
                             <li>
-                                <h4>Die Länge des Passworts ist auf 16 Zeichen beschränkt.</h4> 
+                                <h4>Die Länge des Passworts ist auf 16 Zeichen beschränkt.</h4>
                                 <span>{{ scores.negative.MAX_LEN_16 }}</span>
 
                                 <p>TODO Beschreibung</p>
@@ -95,20 +114,22 @@
                         {% endif %}
                         {% if "PW_IN_REGISTRATION_MAIL" in scores.negative %}
                             <li>
-                                <h4>Das Passwort wird im Registrierungsmail verschickt.</h4> 
+                                <h4>Das Passwort wird im Registrierungsmail verschickt.</h4>
                                 <span>{{ scores.negative.PW_IN_REGISTRATION_MAIL }}</span>
 
-                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände gelangen. Sie gelten
-                                deshalb als unsicher.</p>
+                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
+                                    gelangen. Sie gelten
+                                    deshalb als unsicher.</p>
                             </li>
                         {% endif %}
                         {% if "NEW_PW_IN_REMEMBER_MAIL" in scores.negative %}
                             <li>
-                                <h4>Ein neues Passwort wird direkt per Email verschickt.</h4> 
+                                <h4>Ein neues Passwort wird direkt per Email verschickt.</h4>
                                 <span>{{ scores.negative.NEW_PW_IN_REMEMBER_MAIL }}</span>
 
-                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände gelangen. Sie gelten
-                                deshalb als unsicher.</p>
+                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
+                                    gelangen. Sie gelten
+                                    deshalb als unsicher.</p>
                             </li>
                         {% endif %}
                         {% if "OWN_PW_IN_REMEMBER_MAIL" in scores.negative %}
@@ -119,14 +140,17 @@
                                 <span>{{ scores.negative.OWN_PW_IN_REMEMBER_MAIL }}</span>
 
                                 <p>
-                                    Damit man sich das Passwort im Klartext zusenden lassen kann, muss die Webseite das Passwort ungesichtert abspeichern.
-                                    Das könnte nicht nur in falsche Hände gelanden, sondern auch von Adminstratoren missbraucht werden.
+                                    Damit man sich das Passwort im Klartext zusenden lassen kann, muss die Webseite das
+                                    Passwort ungesichtert abspeichern.
+                                    Das könnte nicht nur in falsche Hände gelanden, sondern auch von Adminstratoren
+                                    missbraucht werden.
                                 </p>
                             </li>
                         {% endif %}
                         {% if "TLS_NO" in scores.negative %}
                             <li>
-                                <h4>Die Seite unterstützt gar kein <a href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>.</h4> 
+                                <h4>Die Seite unterstützt gar kein <a
+                                        href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>.</h4>
                                 <span>{{ scores.negative.TLS_NO }}</span>
 
                                 <p>
@@ -137,36 +161,29 @@
                         {% endif %}
                         {% if "TLS_SOME" in scores.negative %}
                             <li>
-                                <h4>Einige Seiten werden unverschlüsselt übertragen.</h4> 
+                                <h4>Einige Seiten werden unverschlüsselt übertragen.</h4>
                                 <span>{{ scores.negative.TLS_SOME }}</span>
 
-                                <p>Ein Angreifer kann so zwar das Passwort nicht abhören, aber potentiell ein Benutzerkonto übernehmen.</p>
+                                <p>Ein Angreifer kann so zwar das Passwort nicht abhören, aber potentiell ein
+                                    Benutzerkonto übernehmen.</p>
                             </li>
                         {% endif %}
                     </ul>
-                    {% if scores.negative %}
-                    <div class="subtotal negative">
-                        <h4>Negative Punkte</h4> <span>17</span><em>{{ scores.sum.negative }}/-6</em>
-                        <p>Es zählen maximal 6 negative Punkte zur Gesamtwertung und die Wertung kann auch keinen negativen Wert annehmen.</p>
-                    </div>
-                    {% endif %}
-                     <ul class="neutral">
+
+                    <ul class="neutral">
                         {% if "TLS_ALL" in scores.negative %}
                             <li>
                                 <h4>
                                     Es werden alle Seiten über TLS/SSL angeboten, der Besucher wird
                                     aber nicht automatisch auf diese Seiten weitergeleitet.
-                                 </h4> 
-                                 <span>+{{ scores.positive.TLS_ALL }}</span>
+                                </h4>
+                                <span>+{{ scores.positive.TLS_ALL }}</span>
 
                                 <p>Keine Negativpunkte, aber auch keine Pluspunkte.</p>
                             </li>
                         {% endif %}
-                     </ul>
-                     <div class="total">
-                        <h4>Gesamtwertung</h4> <em>{{ scores.sum.total }}/6</em>
-                         <p>Die Gesamtbewertung von {{ site.name }}</p>
-                     </div>
+                    </ul>
+
                 </div>
 
             </div>
