@@ -29,7 +29,6 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
 
         if website.pw_max_length == 0:
             scores['negative']['MAX_LEN_16'] = -1
-
         elif website.pw_max_length == 1:
             scores['negative']['MAX_LEN_10'] = -2
         elif website.pw_max_length == 3:
@@ -41,10 +40,10 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
         if website.eml_registration_plaintext:
             scores['negative']['PW_IN_REGISTRATION_MAIL'] = -1
 
-        if website.eml_recover_plaintext:
+        if website.eml_recovery_plaintext:
             scores['negative']['NEW_PW_IN_REMEMBER_MAIL'] = -1
 
-        if website.eml_remind_plaintext:
+        if website.eml_reminder_plaintext:
             scores['negative']['OWN_PW_IN_REMEMBER_MAIL'] = -3
 
         if website.tls == 0:
@@ -56,11 +55,12 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
         elif website.tls == 3:
             scores['positive']['TLS_FORCED'] = 1
 
-        if website.twofactor:
+        if website.two_factor:
             scores['positive']['TWO_FACTOR'] = 3
 
-        if website.securitywidget:
+        if website.pw_strength_indicator:
             scores['positive']['SECURITY_WIDGET'] = 1
+
         scores['sum'] = self.calculate(scores['positive'].itervalues(),
                                        scores['negative'].itervalues())
 

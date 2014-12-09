@@ -42,16 +42,17 @@ class Website(models.Model):
     # Email
     eml_registration_plaintext = models.NullBooleanField(
         help_text='Does the registration email contain the password in plaintext?')
-    eml_remind_plaintext = models.NullBooleanField(
+    eml_reminder_plaintext = models.NullBooleanField(
         help_text='Does the password reminder email contain the user password in plaintext?')
-    eml_recover_plaintext = models.NullBooleanField(
+    eml_recovery_plaintext = models.NullBooleanField(
         help_text='Does the password recovery email contain a temporary password in plaintext?')
 
     # Other security measures
     tls = models.SmallIntegerField(choices=TLS_CHOICES)
-    twofactor = models.NullBooleanField(
+    two_factor = models.NullBooleanField(
         help_text='Does the website offer some kind of 2 factor authentication?')
-    securitywidget = models.NullBooleanField()
+    pw_strength_indicator = models.NullBooleanField(
+        help_text='Does the website offer a visual password strength indicator?')
 
     def get_canonical_slug(self):
         """Canonical slug for the URL."""
