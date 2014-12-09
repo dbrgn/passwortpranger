@@ -75,7 +75,10 @@ class WebsiteView(CanonicalSlugDetailMixin, DetailView):
         sum_neg = sum(negative)
         if sum_neg < -6:
             sum_neg = -6
-        return {'positive': sum_pos, 'negative': sum_neg, 'total': sum_neg + sum_pos}
+        total = sum_neg + sum_pos
+        if total < 0
+            total = 0
+        return {'positive': sum_pos, 'negative': sum_neg, 'total': total}
 
 
 class InfoView(TemplateView):
