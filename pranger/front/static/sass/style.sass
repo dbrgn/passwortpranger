@@ -1,5 +1,27 @@
 @import "normalize"
 
+=total()
+    h4, span, em, p
+        color: #fff
+        margin: 0
+        display: inline
+
+    em
+        font-size: 24px
+        font-style: normal
+        position: absolute
+        top: 15px
+        right: 10px
+
+    span
+        display: none
+        font-size: 12px
+
+    p
+        display: block
+        font-size: 14px
+        max-width: 93%
+
 *, h1, h2, h3, h4
     font-family: 'Chivo', sans-serif
     font-size: 16px
@@ -15,7 +37,8 @@ h2
 h3
     font-size: 20px
 
-
+h4
+    max-width: 93%
 
 body
     background-color: #f7f7f7
@@ -111,6 +134,7 @@ footer
                 color: #666
                 margin: 5px 0 0 0
                 font-size: 14px
+                max-width: 92%
 
             span
                 position: absolute
@@ -137,22 +161,15 @@ footer
         padding: 10px
         position: relative
 
-        h4, span, em, p
-            color: #fff
-            margin: 0
-            display: inline
+        +total()
 
-        em
-            font-size: 24px
-            font-style: normal
-            position: absolute
-            top: 15px
-            right: 10px
+    .total
+        background-color: #101010
+        margin: 0 0 20px 0
+        padding: 10px
+        position: relative
+        color: white
+        +total()
 
-        span
-            display: none
-            font-size: 12px
 
-        p
-            display: block
-            font-size: 14px
+
