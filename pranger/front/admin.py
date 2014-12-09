@@ -8,3 +8,4 @@ from . import models
 
 admin.site.register(models.User)
 admin.site.register(models.Website)
+admin.site.register(models.Submission)

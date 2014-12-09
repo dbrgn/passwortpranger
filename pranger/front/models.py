@@ -60,3 +60,25 @@ class Website(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Submission(models.Model):
+    """
+    A website submission by a user.
+    """
+    STATUS_CHOICES = (
+        ('new', 'New'),
+        ('accepted', 'Accepted'),
+        ('rejected', 'Rejected'),
+    )
+
+    # Submission data
+    url = models.URLField(
+        help_text='The URL of the website')
+    email = models.EmailField(null=True, blank=True,
+        help_text='Your e-mail address')
+    comments = models.TextField(null=True, blank=True,
+        help_text='Any comments')
+
+    # Workflow
+    status = models.CharField(max_length=16, choices=STATUS_CHOICES)
