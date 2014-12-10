@@ -7,6 +7,6 @@
 *.sass-cache/
 venv
 .idea/
-
-src
+src/
 *.map
+.vagrant/
