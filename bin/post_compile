@@ -1,3 +1,4 @@
 #!/bin/bash
 cd pranger
 ./manage.py compress
+./manage.py migrate
