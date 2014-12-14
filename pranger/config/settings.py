@@ -179,8 +179,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
+STATIC_ROOT = PROJECT_ROOT.child('static')
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = not DEBUG
+COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_JS_FILTERS = (
     'compressor.filters.jsmin.JSMinFilter',
     'compressor.filters.template.TemplateFilter',
@@ -190,8 +192,6 @@ COMPRESS_PRECOMPILERS = (
 )
 COMPRESS_PARSER = 'compressor.parser.LxmlParser'
 if DEBUG:
-    STATIC_ROOT = PROJECT_ROOT.child('static')
-    COMPRESS_ROOT = STATIC_ROOT
     MEDIA_ROOT = PROJECT_ROOT.child('media')
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/'
@@ -204,7 +204,8 @@ else:
     STATIC_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
     MEDIA_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    STATICFILES_STORAGE = 'config.storage.CachedS3BotoStorage'
+    COMPRESS_STORAGE = STATICFILES_STORAGE
     THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # Templates
