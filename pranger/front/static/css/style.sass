@@ -1,22 +1,27 @@
-@import "normalize"
+@import normalize
+
 $background-color: #d6081c
-=total()
+
+=clearfix
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+=total
     h4, span, em, p
         color: #fff
         margin: 0
         display: inline
-
     em
         font-size: 24px
         font-style: normal
         position: absolute
         top: 15px
         right: 10px
-
     span
         display: none
         font-size: 12px
-
     p
         display: block
         font-size: 14px
@@ -54,14 +59,11 @@ body
     padding: 20px
     background-color: #fff
 
-
 header 
+    +clearfix
     position: relative
-    @clearfix()
     background-color: $background-color
     padding: 20px
-
-
     h1 a
         color: #fff
         text-shadow: 0 0 1px rgba(0,0,0,.5)
@@ -71,12 +73,10 @@ header
         font-size: 36px
         line-height: 36px
         font-weight: 300
-
     nav
         display: block
-        @clearfix()
+        +clearfix
         float: right
-
         a
             float: left
             display: block
@@ -85,13 +85,10 @@ header
             margin-right: 1em
             background-color: #9b0b03
             color: #fff
-
             &:hover
                 color: white
-
         a:last-child
             margin: 0
-
 
 footer
     p
@@ -99,7 +96,6 @@ footer
         padding: 1em 0
         float: right
         color: #bf8380
-
         a, a:hover
             font-size: 12px
             color: #bf8380
@@ -119,63 +115,51 @@ footer
         list-style-type: none
         margin: 0
         padding: 0
-
         li
+            +clearfix
             margin: 0 0 20px 0
             padding: 10px
-            @clearfix()
             background-color: #eee
             position: relative
-
             h4
                 margin: 0
                 font-variant: bold
                 display: block
-
             p
                 color: #666
                 margin: 5px 0 0 0
                 font-size: 14px
                 max-width: 92%
-
             span
                 position: absolute
                 top: 16px
                 right: 10px
                 font-size: 24px
-
-
         &.positive
             div
                 background-color: green
             li span
                 color: green
-
         &.negative
             div
                 background-color: red
             li span
                 color: red
-
         &.neutral
             li span
                 color: blue
-
     .subtotal
         background-color: #666
         margin: 0 0 20px 0
         padding: 10px
         position: relative
-
-        +total()
-
+        +total
     .total
-        //background-color: #101010
         margin: 0 0 20px 0
         padding: 10px
         position: relative
         color: white
-        +total()
+        +total
 
 
 //@for $var from 0 through 6

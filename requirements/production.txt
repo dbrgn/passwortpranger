@@ -10,12 +10,15 @@ dj-database-url==0.3.0
 django-messagegroups==0.4.3
 django-braces==1.4.0
 django-crispy-forms==1.4.0
+lxml==3.4.1
+pyScss==1.3.3
 
 # Server
 gunicorn==19.1.1
 newrelic==2.38.0.31
 
 # Static files
+django-compressor==1.4
 #django-storages==1.1.8
 -e hg+https://bitbucket.org/david/django-storages@e27c8b61ab57e5afaf21cccfee005c980d89480f#egg=django_storages-dev
 boto==2.34.0

@@ -10,3 +10,4 @@ venv
 src/
 *.map
 .vagrant/
+pranger/static/

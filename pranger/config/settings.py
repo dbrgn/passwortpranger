@@ -117,8 +117,9 @@ INSTALLED_APPS = (
 
     # 3rd party apps
     'messagegroups',
-    'storages',
     'crispy_forms',
+    'compressor',
+    'storages',
 
     # Own apps
     'front',
@@ -176,9 +177,21 @@ STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_JS_FILTERS = (
+    'compressor.filters.jsmin.JSMinFilter',
+    'compressor.filters.template.TemplateFilter',
+)
+COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', 'pyscss {infile} -o {outfile}'),
+)
+COMPRESS_PARSER = 'compressor.parser.LxmlParser'
 if DEBUG:
     STATIC_ROOT = PROJECT_ROOT.child('static')
+    COMPRESS_ROOT = STATIC_ROOT
     MEDIA_ROOT = PROJECT_ROOT.child('media')
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/'
@@ -196,6 +209,7 @@ else:
 
 # Templates
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Debug toolbar
 def show_debug_toolbar(request):
