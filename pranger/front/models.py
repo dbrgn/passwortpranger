@@ -8,6 +8,8 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.text import slugify
 from django.utils.functional import cached_property
 
+from model_utils import Choices
+
 
 Rating = namedtuple('Rating', 'positive negative total')
 
@@ -27,16 +29,16 @@ class User(AbstractUser):
 
 
 class Website(models.Model):
-    TLS_CHOICES = (
-        (0, 'Nein'),
-        (1, 'Partiell'),
-        (2, 'Überall'),
-        (3, 'Forced')
+    TLS_CHOICES = Choices(
+        (0, 'no', 'Nein'),
+        (1, 'partial', 'Partiell'),
+        (2, 'everywhere', 'Überall'),
+        (3, 'forced', 'Forced')
     )
-    PW_MAX_LENGTH_CHOICES = (
-        (0, '< 16'),
-        (1, '<10'),
-        (2, 'unlimited')
+    PW_MAX_LENGTH_CHOICES = Choices(
+        (0, 'below_16', '<16'),
+        (1, 'below_10', '<10'),
+        (2, 'unlimited', 'unlimited')
     )
     # Basic properties
     name = models.CharField(max_length=255)
@@ -66,7 +68,8 @@ class Website(models.Model):
     @cached_property
     def scores(self):
         """
-        Return a dictionary with positive and negative scores.
+        Return a dictionary with positive and negative scores. It also contains
+        "hint" items that don't affect the score.
 
         This property is cached on the model instance.
 
@@ -74,11 +77,11 @@ class Website(models.Model):
         scores = defaultdict(dict)
 
         # Password length
-        if self.pw_max_length == 0:
+        if self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.below_16:
             scores['negative']['MAX_LEN_16'] = -1
-        elif self.pw_max_length == 1:
+        elif self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.below_10:
             scores['negative']['MAX_LEN_10'] = -2
-        elif self.pw_max_length == 3:
+        elif self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.unlimited:
             scores['positive']['MAX_LEN_UNLIMITED'] = 1
 
         # Alphabet
@@ -87,20 +90,20 @@ class Website(models.Model):
 
         # Plaintext
         if self.eml_registration_plaintext:
-            scores['negative']['PW_IN_REGISTRATION_MAIL'] = -1
+            scores['negative']['EML_REGISTRATION_PLAINTEXT'] = -1
         if self.eml_recovery_plaintext:
-            scores['negative']['NEW_PW_IN_REMEMBER_MAIL'] = -1
+            scores['negative']['EML_RECOVERY_PLAINTEXT'] = -1
         if self.eml_reminder_plaintext:
-            scores['negative']['OWN_PW_IN_REMEMBER_MAIL'] = -3
+            scores['negative']['EML_REMINDER_PLAINTEXT'] = -3
 
         # Encryption
-        if self.tls == 0:
+        if self.tls == self.TLS_CHOICES.no:
             scores['negative']['TLS_NO'] = -2
-        elif self.tls == 1:
+        elif self.tls == self.TLS_CHOICES.partial:
             scores['negative']['TLS_SOME'] = -1
-        elif self.tls == 2:
+        elif self.tls == self.TLS_CHOICES.everywhere:
             scores['hint']['TLS_ALL'] = 0
-        elif self.tls == 3:
+        elif self.tls == self.TLS_CHOICES.forced:
             scores['positive']['TLS_FORCED'] = 1
 
         # MFA
@@ -109,7 +112,7 @@ class Website(models.Model):
 
         # Other
         if self.pw_strength_indicator:
-            scores['positive']['SECURITY_WIDGET'] = 1
+            scores['positive']['PW_STRENGTH_INDICATOR'] = 1
 
         return scores
 
@@ -150,7 +153,7 @@ class Submission(models.Model):
     """
     A website submission by a user.
     """
-    STATUS_CHOICES = (
+    STATUS_CHOICES = Choices(
         ('new', 'New'),
         ('accepted', 'Accepted'),
         ('rejected', 'Rejected'),
@@ -162,7 +165,7 @@ class Submission(models.Model):
     comment = models.TextField(null=True, blank=True, help_text='Any comments')
 
     # Workflow
-    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='new')
+    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default=STATUS_CHOICES.new)
     submit_date = models.DateTimeField('Submit date', auto_now_add=True)
 
     def __unicode__(self):

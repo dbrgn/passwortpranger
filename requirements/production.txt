@@ -6,6 +6,9 @@ Unipath==1.0
 psycopg2==2.5.4
 dj-database-url==0.3.0
 
+# Models
+django-model-utils==2.2
+
 # Frontend
 django-messagegroups==0.4.3
 django-braces==1.4.0

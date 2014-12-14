@@ -54,12 +54,12 @@
                                     stark verbessert.</p>
                             </li>
                         {% endif %}
-                        {% if "SECURITY_WIDGET" in site.scores.positive %}
+                        {% if "PW_STRENGTH_INDICATOR" in site.scores.positive %}
                             <li>
                                 <h4>
                                     Die Passwortstärke wird mit einem grafischen Indikator visualisiert.
                                 </h4>
-                                <span>+{{ site.scores.positive.SECURITY_WIDGET }}</span>
+                                <span>+{{ site.scores.positive.PW_STRENGTH_INDICATOR }}</span>
 
                                 <p>Der Nutzer sieht die Stärke seines Passwortes direkt und wird dazu motiviert, ein
                                     starkes Passwort zu wählen.</p>
@@ -112,32 +112,32 @@
                                 <p>Wird die Verwendung spezieller Zeichen, wie zum Beispiel exotischer Sonderzeichen, unterbunden, gibt es bei gleicher Passwortlänge eine deutlich kleinere Anzahl möglicher Passwörter. Dies vereinfacht es, das Passwort zu knacken.</p>
                             </li>
                         {% endif %}
-                        {% if "PW_IN_REGISTRATION_MAIL" in site.scores.negative %}
+                        {% if "EML_REGISTRATION_PLAINTEXT" in site.scores.negative %}
                             <li>
                                 <h4>Das Passwort wird im Registrierungsmail verschickt.</h4>
-                                <span>{{ site.scores.negative.PW_IN_REGISTRATION_MAIL }}</span>
+                                <span>{{ site.scores.negative.EML_REGISTRATION_PLAINTEXT }}</span>
 
                                 <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
                                     gelangen. Sie gelten
                                     deshalb als unsicher.</p>
                             </li>
                         {% endif %}
-                        {% if "NEW_PW_IN_REMEMBER_MAIL" in site.scores.negative %}
+                        {% if "EML_RECOVERY_PLAINTEXT" in site.scores.negative %}
                             <li>
                                 <h4>Ein neues Passwort wird direkt per Email verschickt.</h4>
-                                <span>{{ site.scores.negative.NEW_PW_IN_REMEMBER_MAIL }}</span>
+                                <span>{{ site.scores.negative.EML_RECOVERY_PLAINTEXT }}</span>
 
                                 <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
                                     gelangen. Sie gelten
                                     deshalb als unsicher.</p>
                             </li>
                         {% endif %}
-                        {% if "OWN_PW_IN_REMEMBER_MAIL" in site.scores.negative %}
+                        {% if "EML_REMINDER_PLAINTEXT" in site.scores.negative %}
                             <li>
                                 <h4>
                                     Man kann sich sein eigenes Passwort im Klartext per Email zuschicken lassen.
                                 </h4>
-                                <span>{{ site.scores.negative.OWN_PW_IN_REMEMBER_MAIL }}</span>
+                                <span>{{ site.scores.negative.EML_REMINDER_PLAINTEXT }}</span>
 
                                 <p>
                                     Damit man sich das Passwort im Klartext zusenden lassen kann, muss die Webseite das
