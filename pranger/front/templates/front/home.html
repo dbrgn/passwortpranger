@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="container intro">
-        
+
         <div class="row">
             <div class="col-md-9">
                 <h2>Was ist der Passwortpranger?</h2>
@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-2 col-md-offset-1">
                 <img src="{{ STATIC_URL }}img/pillory.png" alt="Pranger">
-            </div>            
+            </div>
         </div>
 
         <h2>Prangerliste</h2>
@@ -28,7 +28,7 @@
             {% for site in object_list %}
                 <tr>
                     <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.name }}</a></td>
-                    <td>{{ site.url|urlize }}</td>
+                    <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.url }}</a></td>
                     <td>TBD</td>
                 </tr>
             {% endfor %}
