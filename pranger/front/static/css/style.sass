@@ -65,7 +65,6 @@ header
     background-color: $background-color
     padding: 20px
     h1 a
-        color: #fff
         text-shadow: 0 0 1px rgba(0,0,0,.5)
         margin: 0
         padding: 0
@@ -73,6 +72,8 @@ header
         font-size: 36px
         line-height: 36px
         font-weight: 300
+        &:hover
+            text-decoration: none
     nav
         display: block
         +clearfix
@@ -84,11 +85,12 @@ header
             list-style-type: none
             margin-right: 1em
             background-color: #9b0b03
-            color: #fff
-            &:hover
-                color: white
         a:last-child
             margin: 0
+    a
+        color: #fff
+        &:hover
+            color: white
 
 footer
     p
