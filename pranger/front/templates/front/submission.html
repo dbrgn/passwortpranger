@@ -1,10 +1,21 @@
 {% extends 'front/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block bodyclass %}submission{% endblock %}
 
 {% block content %}
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+    <div class="container submission">
+        <h1>Seite melden</h1>
+
+        <p>Hier kannst du Websites melden, von denen du den Verdacht hast, dass sie
+        unsicher oder verantwortungslos mit Passwörtern umgehen. Wir werden diese
+        dann prüfen und in unseren Katalog aufnehmen.</p>
+
+        <form role="form" action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
 {% endblock %}

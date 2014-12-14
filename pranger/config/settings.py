@@ -118,6 +118,7 @@ INSTALLED_APPS = (
     # 3rd party apps
     'messagegroups',
     'storages',
+    'crispy_forms',
 
     # Own apps
     'front',
@@ -192,6 +193,9 @@ else:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+# Templates
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Debug toolbar
 def show_debug_toolbar(request):

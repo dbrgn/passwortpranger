@@ -444,6 +444,11 @@ body {
   max-width: 900px;
 }
 
+#main .container {
+  padding: 20px;
+  background-color: #fff;
+}
+
 /* line 53, style.sass */
 header {
   position: relative;
@@ -501,11 +506,6 @@ footer p a, footer p a:hover {
   text-decoration: underline;
 }
 
-/* line 104, style.sass */
-.intro {
-  padding: 20px;
-  background-color: #fff;
-}
 /* line 108, style.sass */
 .intro img {
   width: 100%;

@@ -9,6 +9,7 @@ dj-database-url==0.3.0
 # Frontend
 django-messagegroups==0.4.3
 django-braces==1.4.0
+django-crispy-forms==1.4.0
 
 # Server
 gunicorn==19.1.1
