@@ -45,6 +45,13 @@ Test setup::
 
 There should be at least two passing test (and no fails).
 
+Deployment
+----------
+
+.. image:: https://www.herokucdn.com/deploy/button.png
+    :alt: Deploy to Heroku
+    :target: https://heroku.com/deploy?template=https://github.com/dbrgn/passwortpranger
+
 Testing
 -------
 

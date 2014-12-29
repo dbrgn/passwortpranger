@@ -1,0 +1,31 @@
+{
+    "name": "Passwortpranger",
+    "description": "Eine Webplatform, um Firmen die unsorgfältig mit Passwörtern umgehen an den virtuellen Pranger zu stellen.",
+    "repository": "https://github.com/dbrgn/passwortpranger",
+    "keywords": ["passwords"],
+    "website": "http://www.passwortpranger.ch/",
+    "success_url": "/",
+    "addons": [
+        "heroku-postgresql:dev",
+        "newrelic:wayne",
+        "pgbackups:plus",
+        "sendgrid:starter"
+    ],
+    "env": {
+        "AWS_ACCESS_KEY_ID": {
+            "description": "Your Amazon AWS access key for S3."
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "description": "Your Amazon AWS secret key for S3."
+        },
+        "DJANGO_DEBUG": false,
+        "NEW_RELIC_APP_NAME": "Passwortpranger",
+        "SECRET_KEY": {
+            "description": "The Django SECRET_KEY.",
+            "generator": "secret"
+        }
+    },
+    "scripts": {
+        "postdeploy": "cd pranger && python manage.py migrate --noinput && python manage.py compress"
+    }
+}
