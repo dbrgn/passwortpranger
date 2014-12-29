@@ -18,7 +18,7 @@
         "AWS_SECRET_ACCESS_KEY": {
             "description": "Your Amazon AWS secret key for S3."
         },
-        "DJANGO_DEBUG": false,
+        "DJANGO_DEBUG": "False",
         "NEW_RELIC_APP_NAME": "Passwortpranger",
         "SECRET_KEY": {
             "description": "The Django SECRET_KEY.",
