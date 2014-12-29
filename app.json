@@ -6,9 +6,9 @@
     "website": "http://www.passwortpranger.ch/",
     "success_url": "/",
     "addons": [
-        "heroku-postgresql:dev",
+        "heroku-postgresql",
         "newrelic:wayne",
-        "pgbackups:plus",
+        "pgbackups:auto-month",
         "sendgrid:starter"
     ],
     "env": {
