@@ -28,8 +28,5 @@
             "description": "The Django SECRET_KEY.",
             "generator": "secret"
         }
-    },
-    "scripts": {
-        "postdeploy": "cd pranger && python manage.py migrate --noinput && python manage.py compress"
     }
 }
