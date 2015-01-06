@@ -30,9 +30,9 @@ DEBUG = env('DJANGO_DEBUG', 'False').lower() in true_values
 TEMPLATE_DEBUG = DEBUG
 SHOW_DEBUG_TOOLBAR = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
+# Format: "Name1:email1,name2:email2"
+ADMINS_LIST = env('ADMINS', '')
+ADMINS = tuple(admin.rsplit(':', 1) for admin in ADMINS_LIST.split(',') if admin)
 
 DATABASES = {
     'default': dj_database_url.config(),
