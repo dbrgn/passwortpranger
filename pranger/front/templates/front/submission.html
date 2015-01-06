@@ -4,18 +4,20 @@
 
 {% block bodyclass %}submission{% endblock %}
 
+{% block title %}Seite Melden - Passwortpranger{% endblock %}
+
 {% block content %}
     <div class="container submission">
-        <h1>Seite melden</h1>
+        <h1>Seite Melden</h1>
 
         <p>Hier kannst du Websites melden, von denen du den Verdacht hast, dass sie
         unsicher oder verantwortungslos mit Passwörtern umgehen. Wir werden diese
         dann prüfen und in unseren Katalog aufnehmen.</p>
 
-        <form role="form" action="" method="post">
+        <form role="form" action="" method="post" >
             {% csrf_token %}
             {{ form|crispy }}
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" class="btn btn-primary" />
         </form>
     </div>
 {% endblock %}
