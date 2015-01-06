@@ -43,6 +43,8 @@ DATABASES = {
 ALLOWED_HOSTS_LIST = env('ALLOWED_HOSTS', '')
 ALLOWED_HOSTS = filter(None, ALLOWED_HOSTS_LIST.split(','))
 
+SITE_URL = env('SITE_URL', 'http://localhost:8000')
+
 # Internal IPs
 INTERNAL_IPS = ('127.0.0.1',)
 
