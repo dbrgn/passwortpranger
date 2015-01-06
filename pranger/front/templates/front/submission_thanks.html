@@ -1,9 +1,13 @@
 {% extends 'front/base.html' %}
+{% load i18n %}
 
 {% block bodyclass %}info{% endblock %}
 
 {% block content %}
-    <div class="container intro">
-        Thanks!
+    <div class="container">
+        <h1>{% blocktrans context "Headline, capitalize all words" %}Submission Sent{% endblocktrans %}</h1>
+        <p>{% blocktrans %}Thanks for your submission! It will be published after it has been
+        reviewed by our team.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Back to our <a href="/">home page</a>...{% endblocktrans %}
     </div>
 {% endblock %}
