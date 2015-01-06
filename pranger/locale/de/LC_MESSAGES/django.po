@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 20:08+0000\n"
+"POT-Creation-Date: 2015-01-06 21:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,221 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: front/templates/front/website.html:19
+#: front/templates/front/website.html:22
 msgid "Total Score"
 msgstr ""
 
-#: front/templates/front/website.html:21
-msgid "The Total Score of "
+#: front/templates/front/website.html:25
+#, python-format
+msgctxt "total points"
+msgid ""
+"The total score of\n"
+"                                %(sitename)s is"
+msgstr ""
+
+#: front/templates/front/website.html:31
+msgid "Positive score"
+msgstr ""
+
+#: front/templates/front/website.html:33
+msgid "Maximum positive score is 6 points"
+msgstr ""
+
+#: front/templates/front/website.html:39
+msgid "Base points"
+msgstr ""
+
+#: front/templates/front/website.html:44
+msgctxt "base points"
+msgid ""
+"\n"
+"                                    Base points are used for calculation.\n"
+"                                "
+msgstr ""
+
+#: front/templates/front/website.html:52
+#, python-format
+msgctxt "TLS Link"
+msgid ""
+"\n"
+"                                        A %(link)s\n"
+"                                        connection is enforced through the "
+"whole website.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:60
+msgid ""
+"Thanks to a encrypted connection, even in a insecure network sensitive data "
+"is being transmitted safely."
+msgstr ""
+
+#: front/templates/front/website.html:67
+msgid "Authentication using a second secure element is provided."
+msgstr ""
+
+#: front/templates/front/website.html:72
+msgid ""
+"\n"
+"                                        The authenticating user has two "
+"challenges to complete.\n"
+"                                        Usually he has to know something "
+"(password) and has to have something (i.e.\n"
+"                                        Access to a mobile phone to receive "
+"an SMS)\n"
+"                                        The security improvement is "
+"significant.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:85
+msgid "The password strength is indicated visually"
+msgstr ""
+
+#: front/templates/front/website.html:90
+msgid ""
+"Displaying the password strength encourages the user to chose a more safe "
+"password."
+msgstr ""
+
+#: front/templates/front/website.html:97
+msgid "The password length is unlimited."
+msgstr ""
+
+#: front/templates/front/website.html:102
+msgid "Indicates a hashed password to save it."
+msgstr ""
+
+#: front/templates/front/website.html:110
+msgid "Negative score"
+msgstr ""
+
+#: front/templates/front/website.html:115
+msgid "Maximum negative score is 6 points. The final value can't be negative."
+msgstr ""
+
+#: front/templates/front/website.html:121
+msgid "The password length is limited to 16 chars."
+msgstr ""
+
+#: front/templates/front/website.html:125
+msgid ""
+"\n"
+"                                        A maximum length specified on a "
+"password field should be read as a SECURITY\n"
+"                                        WARNING:\n"
+"                                        Any sensible, security conscious "
+"user must assume the worst and expect that this\n"
+"                                        site is storing your password "
+"literally (i.e. not hashed).\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:137
+msgid "The password length is limited to 10 chars."
+msgstr ""
+
+#: front/templates/front/website.html:140
+msgid ""
+"\n"
+"                                    A maximum length specified on a password "
+"field should be read as a SECURITY WARNING:\n"
+"                                    Any sensible, security conscious user "
+"must assume the worst and expect that this\n"
+"                                    site is storing your password literally "
+"(i.e. not hashed).\n"
+"                                "
+msgstr ""
+
+#: front/templates/front/website.html:150
+msgid "The characters useable for a password are limited."
+msgstr ""
+
+#: front/templates/front/website.html:155
+msgid ""
+"\n"
+"                                        The prohibition of exotic symbols in "
+"password results in a lower count of\n"
+"                                        different possible passwords.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:165
+msgid "The password is delivered by email during the registration process."
+msgstr ""
+
+#: front/templates/front/website.html:170
+#: front/templates/front/website.html:183
+msgid ""
+"\n"
+"                                        Emails are usually delivered in "
+"plain text.\n"
+"                                        You should always expect that "
+"someone is reading your emails.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:179
+msgid "A changed password is delivered by email"
+msgstr ""
+
+#: front/templates/front/website.html:193
+msgid "A forgotten password is delivered by email"
+msgstr ""
+
+#: front/templates/front/website.html:198
+msgid ""
+"\n"
+"                                        In order to send a password in plain "
+"text, the website operator has to save it\n"
+"                                        in plain text.\n"
+"                                        This could not only result in data "
+"theft by third parties, even the website\n"
+"                                        administraor could abuse it.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:210
+#, python-format
+msgctxt "TLS Link"
+msgid ""
+"\n"
+"                                        A %(link)s\n"
+"                                        connection is not possible on this "
+"website.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:218
+msgid ""
+"\n"
+"                                        The password transmitted in plain "
+"text an could be intercepted.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:227
+msgid "Some pages are transmitted unsecured."
+msgstr ""
+
+#: front/templates/front/website.html:232
+msgid ""
+"The password can most likely not be intercepted, but the user account could "
+"be stolen."
+msgstr ""
+
+#: front/templates/front/website.html:242
+#, python-format
+msgctxt "TLS Link"
+msgid ""
+"\n"
+"                                        All pages are available through "
+"%(link)s,\n"
+"                                        but the user is not redirected "
+"automatically.\n"
+"                                    "
+msgstr ""
+
+#: front/templates/front/website.html:250
+msgid "The user is responsible for his safety."
 msgstr ""
