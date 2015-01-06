@@ -103,7 +103,14 @@
                                 <span>+{{ site.scores.positive.MAX_LEN_UNLIMITED }}</span>
 
                                 <p>
-                                    {% trans "Indicates a hashed password to save it." %}
+                                    {% blocktrans with url=https://blog.knut.me/warum-laengenbeschraenkungen-fuer-passwoerter-nichts-taugen.html %}
+                                    There is no reason to limit the
+                                    length of a password. On the contrary, it can
+                                    be an indication that the passwords are stored
+                                    insecurely. Here's a good post about this
+                                    topic: <a href="blog.knut.me">{{ url }}</a>
+                                    (German only).
+                                    {% endblocktrans %}
                                 </p>
                             </li>
                         {% endif %}
