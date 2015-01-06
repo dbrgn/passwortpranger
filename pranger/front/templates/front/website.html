@@ -1,12 +1,13 @@
 {% extends 'front/base.html' %}
-
+{% load i18n %}
 {% block bodyclass %}website{% endblock %}
 
 {% block content %}
     <div class="container intro">
         <h1>{{ site.name }}</h1>
 
-        <p>{{ site.url|urlize }}</p>
+        <p><a href="{{ site.url }}" target="_blank"><span class="glyphicon glyphicon-new-window"></span>{{ site.url }}
+        </a></p>
 
         {{ site.description|linebreaks|urlize }}
 
@@ -16,165 +17,215 @@
             <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="result">
                     <div class="total score-{{ site.ratings.total }}">
-                        <h4>Gesamtwertung</h4> <em>{{ site.ratings.total }}/6</em>
+                        <h4>{% trans "Total Score" %}</h4> <em>{{ site.ratings.total }}/6</em>
 
-                        <p>Die Gesamtbewertung von {{ site.name }}</p>
+                        <p>
+                            {% blocktrans with sitename=site.name context "bottom points" %}The total score of
+                                {{ sitename }} is{% endblocktrans %}
+                        </p>
                     </div>
                     {% if site.scores.positive %}
                         <div class="subtotal positive">
-                            <h4>Positive Punkte</h4> <span>17</span><em>{{ site.ratings.positive }}</em>
+                            <h4>{% trans "Positive score" %}</h4> <span>17</span><em>{{ site.ratings.positive }}</em>
 
-                            <p>Es zählen maximal 6 positive Punkte zur Gesamtwertung</p>
+                            <p>{% trans "Maximum positive score is 6 points" %}</p>
                         </div>
                     {% endif %}
                     <ul class="positive">
-                            <li>
-                                <h4>
-                                    Basispunkte
-                                </h4>
-                                <span>+4</span>
-                                <p>
-                                    Diese Punkte dienen zur Berechnung der Gesamtpunktzahl.
-                                </p>
-                            </li>
+                        <li>
+                            <h4>
+                                {% trans "Bottom points" %}
+                            </h4>
+                            <span>+4</span>
+
+                            <p>
+                            </p>
+                        </li>
                         {% if "TLS_FORCED" in site.scores.positive %}
                             <li>
                                 <h4>
-                                    Eine <a href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>
-                                    Verbindung wird auf der
-                                    ganzen Webseite erzwungen.
+                                    {% blocktrans with link="<a href='http://de.wikipedia.org/wiki/Transport_Layer_Security'>TLS/SSL</a>" context "TLS Link" %}
+                                        A {{ link }}
+                                        connection is enforced through the whole website.
+                                    {% endblocktrans %}
                                 </h4>
                                 <span>+{{ site.scores.positive.TLS_FORCED }}</span>
 
-                                <p>Indem die Verbindung konsequent verschlüsselt wird, können auch auf unsicheren
-                                    Netzwerken sensitive Daten geheim gehalten werden.</p>
+                                <p>
+                                    {% trans "Thanks to a encrypted connection, even in a insecure network sensitive data is being transmitted safely." %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "TWO_FACTOR" in site.scores.positive %}
                             <li>
                                 <h4>
-                                    Eine Authentisierung mit einem zweiten Sicherheitselement
-                                    wird angeboten.
+                                    {% trans "Authentication using a second secure element is provided." %}
                                 </h4>
                                 <span>+{{ site.scores.positive.TWO_FACTOR }}</span>
 
-                                <p>Der Nutzer muss etwas wissen (in der Regel ein Passwort) und etwas haben (meist ein
-                                    Sicherheitstoken, bzw. ein vertrauenswürdiges Gerät). Damit wird die Sicherheit
-                                    stark verbessert.</p>
+                                <p>
+                                    {% blocktrans %}
+                                        The authenticating user has two challenges to complete.
+                                        Usually he has to know something (password) and has to have something (i.e.
+                                        Access to a mobile phone to receive an SMS)
+                                        The security improvement is significant.
+                                    {% endblocktrans %}
+
+                                </p>
                             </li>
                         {% endif %}
                         {% if "PW_STRENGTH_INDICATOR" in site.scores.positive %}
                             <li>
                                 <h4>
-                                    Die Passwortstärke wird mit einem grafischen Indikator visualisiert.
+                                    {% trans "The password strength is indicated visually" %}
                                 </h4>
                                 <span>+{{ site.scores.positive.PW_STRENGTH_INDICATOR }}</span>
 
-                                <p>Der Nutzer sieht die Stärke seines Passwortes direkt und wird dazu motiviert, ein
-                                    starkes Passwort zu wählen.</p>
+                                <p>
+                                    {% trans "Displaying the password strength encourages the user to chose a more safe password." %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_UNLIMITED" in site.scores.positive %}
                             <li>
                                 <h4>
-                                    Die maxmiale Länge des Passworts ist nicht beschränkt.
+                                    {% trans "The password length is unlimited." %}
                                 </h4>
                                 <span>+{{ site.scores.positive.MAX_LEN_UNLIMITED }}</span>
 
-                                <p>Dies deutet auf eine Speicherung des Passwortes mittels einer dafür geeigneten
-                                    Hashfunktion hin.</p>
+                                <p>
+                                    {% trans "Indicates a hashed password to save it." %}
+                                </p>
                             </li>
                         {% endif %}
                     </ul>
                     {% if site.scores.negative %}
                         <div class="subtotal negative">
-                            <h4>Negative Punkte</h4> <span>17</span><em>{{ site.ratings.negative }}</em>
+                            <h4>
+                                {% trans "Negative score" %}
+                            </h4> <span>17</span><em>{{ site.ratings.negative }}</em>
 
-                            <p>Es zählen maximal 6 negative Punkte zur Gesamtwertung und die Wertung kann auch keinen
-                                negativen Wert annehmen.</p>
+                            <p>
+
+                            <p>{% trans "Maximum negative score is 6 points. The final value can't be negative." %}</p></p>
                         </div>
                     {% endif %}
                     <ul class="negative">
                         {% if "MAX_LEN_16" in site.scores.negative %}
                             <li>
-                                <h4>Die Länge des Passworts ist auf 16 Zeichen beschränkt.</h4>
+                                <h4>{% trans "The password length is limited to 16 chars." %}</h4>
                                 <span>{{ site.scores.negative.MAX_LEN_16 }}</span>
 
-                                <p>Eine Beschränkung der Länge des Passworts reduziert die Anzahl möglichen Passwörter und vereinfacht es somit, das Passwort zu knacken. Bei einer sauberen Speicherung des Passworts, muss die Länge überhaupt nicht beschränkt werden.</p>
+                                <p>
+                                    {% blocktrans %}
+                                        A maximum length specified on a password field should be read as a SECURITY
+                                        WARNING:
+                                        Any sensible, security conscious user must assume the worst and expect that this
+                                        site is storing your password literally (i.e. not hashed).
+                                    {% endblocktrans %}
+
+                                </p>
                             </li>
                         {% endif %}
                         {% if "MAX_LEN_10" in site.scores.negative %}
                             <li>
-                                <h4>Die Länge des Passworts ist auf 10 Zeichen beschränkt</h4>
+                                <h4>{% trans "The password length is limited to 10 chars." %}</h4>
                                 <span>{{ site.scores.negative.MAX_LEN_10 }}</span>
 
-                                <p>Eine Beschränkung der Länge des Passworts reduziert die Anzahl möglichen Passwörter und vereinfacht es somit, das Passwort zu knacken. Bei einer sauberen Speicherung des Passworts, muss die Länge überhaupt nicht beschränkt werden.</p>
+                                <p>{% blocktrans %}
+                                    A maximum length specified on a password field should be read as a SECURITY WARNING:
+                                    Any sensible, security conscious user must assume the worst and expect that this
+                                    site is storing your password literally (i.e. not hashed).
+                                {% endblocktrans %}</p>
                             </li>
                         {% endif %}
                         {% if "ALPHABET_LIMITED" in site.scores.negative %}
                             <li>
                                 <h4>
-                                    Das Passwort kann nur aus einer limitierten Anzahl verschiedener Zeichen bestehen.
+                                    {% trans "The characters useable for a password are limited." %}
                                 </h4>
                                 <span>{{ site.scores.negative.ALPHABET_LIMITED }}</span>
 
-                                <p>Wird die Verwendung spezieller Zeichen, wie zum Beispiel exotischer Sonderzeichen, unterbunden, gibt es bei gleicher Passwortlänge eine deutlich kleinere Anzahl möglicher Passwörter. Dies vereinfacht es, das Passwort zu knacken.</p>
+                                <p>
+                                    {% blocktrans %}
+                                        The prohibition of exotic symbols in password results in a lower count of
+                                        different possible passwords.
+                                    {% endblocktrans %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "EML_REGISTRATION_PLAINTEXT" in site.scores.negative %}
                             <li>
-                                <h4>Das Passwort wird im Registrierungsmail verschickt.</h4>
+                                <h4>
+                                    {% trans "The password is delivered by email during the registration process." %}
+                                </h4>
                                 <span>{{ site.scores.negative.EML_REGISTRATION_PLAINTEXT }}</span>
 
-                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
-                                    gelangen. Sie gelten
-                                    deshalb als unsicher.</p>
+                                <p>
+                                    {% blocktrans %}
+                                        Emails are usually delivered in plain text.
+                                        You should always expect that someone is reading your emails.
+                                    {% endblocktrans %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "EML_RECOVERY_PLAINTEXT" in site.scores.negative %}
                             <li>
-                                <h4>Ein neues Passwort wird direkt per Email verschickt.</h4>
+                                <h4>{% trans "A changed password is delivered by email" %}</h4>
                                 <span>{{ site.scores.negative.EML_RECOVERY_PLAINTEXT }}</span>
 
-                                <p>Emails werden im Normalfall im Klartext verschickt und können in falsche Hände
-                                    gelangen. Sie gelten
-                                    deshalb als unsicher.</p>
+                                <p>
+                                    {% blocktrans %}
+                                        Emails are usually delivered in plain text.
+                                        You should always expect that someone is reading your emails.
+                                    {% endblocktrans %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "EML_REMINDER_PLAINTEXT" in site.scores.negative %}
                             <li>
                                 <h4>
-                                    Man kann sich sein eigenes Passwort im Klartext per Email zuschicken lassen.
+                                    {% trans "A forgotten password is delivered by email" %}
                                 </h4>
                                 <span>{{ site.scores.negative.EML_REMINDER_PLAINTEXT }}</span>
 
                                 <p>
-                                    Damit man sich das Passwort im Klartext zusenden lassen kann, muss die Webseite das
-                                    Passwort ungesichtert abspeichern.
-                                    Das könnte nicht nur in falsche Hände gelanden, sondern auch von Adminstratoren
-                                    missbraucht werden.
+                                    {% blocktrans %}
+                                        In order to send a password in plain text, the website operator has to save it
+                                        in plain text.
+                                        This could not only result in data theft by third parties, even the website
+                                        administraor could abuse it.
+                                    {% endblocktrans %}
                                 </p>
                             </li>
                         {% endif %}
                         {% if "TLS_NO" in site.scores.negative %}
                             <li>
-                                <h4>Die Seite unterstützt gar kein <a
-                                        href="http://de.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>.</h4>
+                                <h4>
+                                    {% blocktrans with link="<a href='http://de.wikipedia.org/wiki/Transport_Layer_Security'>TLS/SSL</a>" context "TLS Link" %}
+                                        A {{ link }}
+                                        connection is not possible on this website.
+                                    {% endblocktrans %}
+                                </h4>
                                 <span>{{ site.scores.negative.TLS_NO }}</span>
 
                                 <p>
-                                    Das Passwort wird beim Login im Klartext übertragen und
-                                    kann abgefangen werden.
+                                    {% blocktrans %}
+                                        The password transmitted in plain text an could be intercepted.
+                                    {% endblocktrans %}
                                 </p>
                             </li>
                         {% endif %}
                         {% if "TLS_SOME" in site.scores.negative %}
                             <li>
-                                <h4>Einige Seiten werden unverschlüsselt übertragen.</h4>
+                                <h4>
+                                    {% trans "Some pages are transmitted unsecured." %}
+                                </h4>
                                 <span>{{ site.scores.negative.TLS_SOME }}</span>
 
-                                <p>Ein Angreifer kann so zwar das Passwort nicht abhören, aber potentiell ein
-                                    Benutzerkonto übernehmen.</p>
+                                <p>
+                                    {% trans "The password can most likely not be intercepted, but the user account could be stolen." %}
+                                </p>
                             </li>
                         {% endif %}
                     </ul>
@@ -183,12 +234,16 @@
                         {% if "TLS_ALL" in site.scores.negative %}
                             <li>
                                 <h4>
-                                    Es werden alle Seiten über TLS/SSL angeboten, der Besucher wird
-                                    aber nicht automatisch auf diese Seiten weitergeleitet.
+                                    {% blocktrans with link="<a href='http://de.wikipedia.org/wiki/Transport_Layer_Security'>TLS/SSL</a>" context "TLS Link" %}
+                                        All pages are available through {{ link }},
+                                        but the user is not redirected automatically.
+                                    {% endblocktrans %}
                                 </h4>
                                 <span>+{{ site.scores.positive.TLS_ALL }}</span>
 
-                                <p>Keine Negativpunkte, aber auch keine Pluspunkte.</p>
+                                <p>
+                                    {% trans "The user is responsible for his safety." %}
+                                </p>
                             </li>
                         {% endif %}
                     </ul>
