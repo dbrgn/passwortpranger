@@ -2,11 +2,13 @@
 
 {% block bodyclass %}website{% endblock %}
 
+{% block title %}{{ site.name }} auf Passwortpranger{% endblock %}
+
 {% block content %}
     <div class="container intro">
         <h1>{{ site.name }}</h1>
 
-        <p>{{ site.url|urlize }}</p>
+        <p>{{ site.url }}</p>
 
         {{ site.description|linebreaks|urlize }}
 
