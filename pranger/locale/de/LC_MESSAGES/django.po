@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 23:17+0100\n"
+"POT-Creation-Date: 2015-01-06 23:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: front/templates/front/submission.html:7
-#: front/templates/front/submission.html:11
+#: front/templates/front/submission.html:8
+#: front/templates/front/submission.html:12
 msgid "Submit Website"
 msgstr ""
 
-#: front/templates/front/submission.html:13
+#: front/templates/front/submission.html:14
 msgid ""
 "Here you can submit websites where you suspect that\n"
 "        they don't handle passwords safely. Our team will then review them "
@@ -46,31 +46,19 @@ msgstr ""
 msgid "Back to our <a href=\"/\">home page</a>..."
 msgstr ""
 
-#: front/templates/front/website.html:22
-msgid "Total Score"
-msgstr ""
-
-#: front/templates/front/website.html:25
-#, python-format
-msgctxt "total points"
-msgid ""
-"The total score of\n"
-"                                %(sitename)s is"
-msgstr ""
-
-#: front/templates/front/website.html:31
+#: front/templates/front/website.html:36
 msgid "Positive score"
 msgstr ""
 
-#: front/templates/front/website.html:33
+#: front/templates/front/website.html:38
 msgid "Maximum positive score is 6 points"
 msgstr ""
 
-#: front/templates/front/website.html:39
+#: front/templates/front/website.html:44
 msgid "Base points"
 msgstr ""
 
-#: front/templates/front/website.html:44
+#: front/templates/front/website.html:49
 msgctxt "base points"
 msgid ""
 "\n"
@@ -78,7 +66,7 @@ msgid ""
 "                                "
 msgstr ""
 
-#: front/templates/front/website.html:52
+#: front/templates/front/website.html:57
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -89,17 +77,17 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:60
+#: front/templates/front/website.html:65
 msgid ""
 "Thanks to an encrypted connection, all data is being transmitted securely "
 "through the network."
 msgstr ""
 
-#: front/templates/front/website.html:67
+#: front/templates/front/website.html:72
 msgid "Two Factor Authentication is available"
 msgstr ""
 
-#: front/templates/front/website.html:72
+#: front/templates/front/website.html:77
 msgid ""
 "\n"
 "                                        The authenticating user has two "
@@ -113,21 +101,22 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:84
+#: front/templates/front/website.html:89
 msgid "The password strength is indicated visually"
 msgstr ""
 
-#: front/templates/front/website.html:89
+#: front/templates/front/website.html:94
 msgid ""
 "Displaying the password strength encourages the user to chose a more safe "
 "password."
 msgstr ""
 
-#: front/templates/front/website.html:96
+#: front/templates/front/website.html:101
 msgid "The password length is unlimited."
 msgstr ""
 
-#: front/templates/front/website.html:101
+#: front/templates/front/website.html:106
+#: front/templates/front/website.html:136
 #, python-format
 msgid ""
 "\n"
@@ -138,58 +127,50 @@ msgid ""
 "stored\n"
 "                                    insecurely. Here's a good post about "
 "this\n"
-"                                    topic: <a href=\"blog.knut.me\">%(url)s</"
+"                                    topic: <a href=\"%(url)s\">blog.knut.me</"
 "a>\n"
 "                                    (German only).\n"
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:116
+#: front/templates/front/website.html:121
 msgid "Negative score"
 msgstr ""
 
-#: front/templates/front/website.html:121
+#: front/templates/front/website.html:126
 msgid "Maximum negative score is 6 points. The final value can't be negative."
 msgstr ""
 
-#: front/templates/front/website.html:127
+#: front/templates/front/website.html:132
 msgid "The password length is limited to 16 chars."
 msgstr ""
 
-#: front/templates/front/website.html:131
-msgid ""
-"\n"
-"                                        A maximum length specified on a "
-"password field should be read as a SECURITY\n"
-"                                        WARNING:\n"
-"                                        Any sensible, security conscious "
-"user must assume the worst and expect that this\n"
-"                                        site is storing your password "
-"literally (i.e. not hashed).\n"
-"                                    "
-msgstr ""
-
-#: front/templates/front/website.html:143
+#: front/templates/front/website.html:149
 msgid "The password length is limited to 10 chars."
 msgstr ""
 
-#: front/templates/front/website.html:146
+#: front/templates/front/website.html:153
+#, python-format
 msgid ""
 "\n"
-"                                    A maximum length specified on a password "
-"field should be read as a SECURITY WARNING:\n"
-"                                    Any sensible, security conscious user "
-"must assume the worst and expect that this\n"
-"                                    site is storing your password literally "
-"(i.e. not hashed).\n"
-"                                "
+"                                    Passwords of this length are too short "
+"and can be\n"
+"                                    cracked with today's hardware in a "
+"reasonable amount of time.\n"
+"                                    Furthermore, this limitation can be be "
+"an indication that the\n"
+"                                    passwords are stored insecurely. Here's "
+"a good post about this\n"
+"                                    topic: <a href=\"%(url)s\">blog.knut.me</"
+"a> (German only).\n"
+"                                    "
 msgstr ""
 
-#: front/templates/front/website.html:156
+#: front/templates/front/website.html:166
 msgid "The characters useable for a password are limited."
 msgstr ""
 
-#: front/templates/front/website.html:161
+#: front/templates/front/website.html:171
 msgid ""
 "\n"
 "                                        The prohibition of exotic symbols in "
@@ -198,12 +179,12 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:171
+#: front/templates/front/website.html:181
 msgid "The password is delivered by email during the registration process."
 msgstr ""
 
-#: front/templates/front/website.html:176
-#: front/templates/front/website.html:189
+#: front/templates/front/website.html:186
+#: front/templates/front/website.html:199
 msgid ""
 "\n"
 "                                        Emails are usually delivered in "
@@ -213,15 +194,15 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:185
+#: front/templates/front/website.html:195
 msgid "A changed password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:199
+#: front/templates/front/website.html:209
 msgid "A forgotten password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:204
+#: front/templates/front/website.html:214
 msgid ""
 "\n"
 "                                        In order to send a password in plain "
@@ -233,7 +214,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:216
+#: front/templates/front/website.html:226
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -244,7 +225,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:224
+#: front/templates/front/website.html:234
 msgid ""
 "\n"
 "                                        The password transmitted in plain "
@@ -252,17 +233,17 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:233
+#: front/templates/front/website.html:243
 msgid "Some pages are transmitted unsecured."
 msgstr ""
 
-#: front/templates/front/website.html:238
+#: front/templates/front/website.html:248
 msgid ""
 "The password can most likely not be intercepted, but the user account could "
 "be stolen."
 msgstr ""
 
-#: front/templates/front/website.html:248
+#: front/templates/front/website.html:258
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -274,6 +255,18 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:256
+#: front/templates/front/website.html:266
 msgid "The user is responsible for his safety."
+msgstr ""
+
+#: front/templates/front/website.html:273
+msgid "Total Score"
+msgstr ""
+
+#: front/templates/front/website.html:276
+#, python-format
+msgctxt "total points"
+msgid ""
+"The total score of\n"
+"                                %(sitename)s is"
 msgstr ""

@@ -103,12 +103,12 @@
                                 <span>+{{ site.scores.positive.MAX_LEN_UNLIMITED }}</span>
 
                                 <p>
-                                    {% blocktrans with url=https://blog.knut.me/warum-laengenbeschraenkungen-fuer-passwoerter-nichts-taugen.html %}
+                                    {% blocktrans with url="https://blog.knut.me/warum-laengenbeschraenkungen-fuer-passwoerter-nichts-taugen.html" %}
                                     There is no reason to limit the
                                     length of a password. On the contrary, it can
                                     be an indication that the passwords are stored
                                     insecurely. Here's a good post about this
-                                    topic: <a href="blog.knut.me">{{ url }}</a>
+                                    topic: <a href="{{ url }}">blog.knut.me</a>
                                     (German only).
                                     {% endblocktrans %}
                                 </p>
@@ -133,13 +133,14 @@
                                 <span>{{ site.scores.negative.MAX_LEN_16 }}</span>
 
                                 <p>
-                                    {% blocktrans %}
-                                        A maximum length specified on a password field should be read as a SECURITY
-                                        WARNING:
-                                        Any sensible, security conscious user must assume the worst and expect that this
-                                        site is storing your password literally (i.e. not hashed).
+                                    {% blocktrans with url="https://blog.knut.me/warum-laengenbeschraenkungen-fuer-passwoerter-nichts-taugen.html" %}
+                                    There is no reason to limit the
+                                    length of a password. On the contrary, it can
+                                    be an indication that the passwords are stored
+                                    insecurely. Here's a good post about this
+                                    topic: <a href="{{ url }}">blog.knut.me</a>
+                                    (German only).
                                     {% endblocktrans %}
-
                                 </p>
                             </li>
                         {% endif %}
@@ -148,11 +149,15 @@
                                 <h4>{% trans "The password length is limited to 10 chars." %}</h4>
                                 <span>{{ site.scores.negative.MAX_LEN_10 }}</span>
 
-                                <p>{% blocktrans %}
-                                    A maximum length specified on a password field should be read as a SECURITY WARNING:
-                                    Any sensible, security conscious user must assume the worst and expect that this
-                                    site is storing your password literally (i.e. not hashed).
-                                {% endblocktrans %}</p>
+                                <p>
+                                    {% blocktrans with url="https://blog.knut.me/warum-laengenbeschraenkungen-fuer-passwoerter-nichts-taugen.html" %}
+                                    Passwords of this length are too short and can be
+                                    cracked with today's hardware in a reasonable amount of time.
+                                    Furthermore, this limitation can be be an indication that the
+                                    passwords are stored insecurely. Here's a good post about this
+                                    topic: <a href="{{ url }}">blog.knut.me</a> (German only).
+                                    {% endblocktrans %}
+                                </p>
                             </li>
                         {% endif %}
                         {% if "ALPHABET_LIMITED" in site.scores.negative %}
@@ -271,7 +276,7 @@
                             {% blocktrans with sitename=site.name context "total points" %}The total score of
                                 {{ sitename }} is{% endblocktrans %}
                         </p>
-                    </div>  
+                    </div>
                 </div>
 
             </div>
