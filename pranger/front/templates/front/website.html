@@ -22,17 +22,17 @@
                         <h4>{% trans "Total Score" %}</h4> <em>{{ site.ratings.total }}/6</em>
 
                         <p>
-                            {% blocktrans with sitename=site.name context "bottom points" %}The total score of
+                            {% blocktrans with sitename=site.name context "total points" %}The total score of
                                 {{ sitename }} is{% endblocktrans %}
                         </p>
                     </div>
-                    {% if site.scores.positive %}
+
                         <div class="subtotal positive">
                             <h4>{% trans "Positive score" %}</h4> <span>17</span><em>{{ site.ratings.positive }}</em>
 
                             <p>{% trans "Maximum positive score is 6 points" %}</p>
                         </div>
-                    {% endif %}
+
                     <ul class="positive">
                         <li>
                             <h4>
@@ -41,6 +41,9 @@
                             <span>+4</span>
 
                             <p>
+                                {% blocktrans with sitename=site.name context "bottom points" %}
+                                    Bottom points are used for calculation.
+                                {% endblocktrans %}
                             </p>
                         </li>
                         {% if "TLS_FORCED" in site.scores.positive %}
