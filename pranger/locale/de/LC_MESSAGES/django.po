@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 22:35+0100\n"
+"POT-Creation-Date: 2015-01-06 22:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,12 +91,12 @@ msgstr ""
 
 #: front/templates/front/website.html:60
 msgid ""
-"Thanks to a encrypted connection, even in a insecure network sensitive data "
-"is being transmitted safely."
+"Thanks to an encrypted connection, all data is being transmitted securely "
+"through the network."
 msgstr ""
 
 #: front/templates/front/website.html:67
-msgid "Authentication using a second secure element is provided."
+msgid "Two Factor Authentication is available"
 msgstr ""
 
 #: front/templates/front/website.html:72
@@ -106,44 +106,44 @@ msgid ""
 "challenges to complete.\n"
 "                                        Usually he has to know something "
 "(password) and has to have something (i.e.\n"
-"                                        Access to a mobile phone to receive "
-"an SMS)\n"
+"                                        access to a mobile phone to receive "
+"an SMS).\n"
 "                                        The security improvement is "
 "significant.\n"
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:85
+#: front/templates/front/website.html:84
 msgid "The password strength is indicated visually"
 msgstr ""
 
-#: front/templates/front/website.html:90
+#: front/templates/front/website.html:89
 msgid ""
 "Displaying the password strength encourages the user to chose a more safe "
 "password."
 msgstr ""
 
-#: front/templates/front/website.html:97
+#: front/templates/front/website.html:96
 msgid "The password length is unlimited."
 msgstr ""
 
-#: front/templates/front/website.html:102
+#: front/templates/front/website.html:101
 msgid "Indicates a hashed password to save it."
 msgstr ""
 
-#: front/templates/front/website.html:110
+#: front/templates/front/website.html:109
 msgid "Negative score"
 msgstr ""
 
-#: front/templates/front/website.html:115
+#: front/templates/front/website.html:114
 msgid "Maximum negative score is 6 points. The final value can't be negative."
 msgstr ""
 
-#: front/templates/front/website.html:121
+#: front/templates/front/website.html:120
 msgid "The password length is limited to 16 chars."
 msgstr ""
 
-#: front/templates/front/website.html:125
+#: front/templates/front/website.html:124
 msgid ""
 "\n"
 "                                        A maximum length specified on a "
@@ -156,11 +156,11 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:137
+#: front/templates/front/website.html:136
 msgid "The password length is limited to 10 chars."
 msgstr ""
 
-#: front/templates/front/website.html:140
+#: front/templates/front/website.html:139
 msgid ""
 "\n"
 "                                    A maximum length specified on a password "
@@ -172,11 +172,11 @@ msgid ""
 "                                "
 msgstr ""
 
-#: front/templates/front/website.html:150
+#: front/templates/front/website.html:149
 msgid "The characters useable for a password are limited."
 msgstr ""
 
-#: front/templates/front/website.html:155
+#: front/templates/front/website.html:154
 msgid ""
 "\n"
 "                                        The prohibition of exotic symbols in "
@@ -185,12 +185,12 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:165
+#: front/templates/front/website.html:164
 msgid "The password is delivered by email during the registration process."
 msgstr ""
 
-#: front/templates/front/website.html:170
-#: front/templates/front/website.html:183
+#: front/templates/front/website.html:169
+#: front/templates/front/website.html:182
 msgid ""
 "\n"
 "                                        Emails are usually delivered in "
@@ -200,15 +200,15 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:179
+#: front/templates/front/website.html:178
 msgid "A changed password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:193
+#: front/templates/front/website.html:192
 msgid "A forgotten password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:198
+#: front/templates/front/website.html:197
 msgid ""
 "\n"
 "                                        In order to send a password in plain "
@@ -220,7 +220,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:210
+#: front/templates/front/website.html:209
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -231,7 +231,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:218
+#: front/templates/front/website.html:217
 msgid ""
 "\n"
 "                                        The password transmitted in plain "
@@ -239,17 +239,17 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:227
+#: front/templates/front/website.html:226
 msgid "Some pages are transmitted unsecured."
 msgstr ""
 
-#: front/templates/front/website.html:232
+#: front/templates/front/website.html:231
 msgid ""
 "The password can most likely not be intercepted, but the user account could "
 "be stolen."
 msgstr ""
 
-#: front/templates/front/website.html:242
+#: front/templates/front/website.html:241
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -261,6 +261,6 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:250
+#: front/templates/front/website.html:249
 msgid "The user is responsible for his safety."
 msgstr ""

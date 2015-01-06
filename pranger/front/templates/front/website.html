@@ -57,14 +57,14 @@
                                 <span>+{{ site.scores.positive.TLS_FORCED }}</span>
 
                                 <p>
-                                    {% trans "Thanks to a encrypted connection, even in a insecure network sensitive data is being transmitted safely." %}
+                                {% trans 'Thanks to an encrypted connection, all data is being transmitted securely through the network.' %}
                                 </p>
                             </li>
                         {% endif %}
                         {% if "TWO_FACTOR" in site.scores.positive %}
                             <li>
                                 <h4>
-                                    {% trans "Authentication using a second secure element is provided." %}
+                                    {% trans "Two Factor Authentication is available" %}
                                 </h4>
                                 <span>+{{ site.scores.positive.TWO_FACTOR }}</span>
 
@@ -72,10 +72,9 @@
                                     {% blocktrans %}
                                         The authenticating user has two challenges to complete.
                                         Usually he has to know something (password) and has to have something (i.e.
-                                        Access to a mobile phone to receive an SMS)
+                                        access to a mobile phone to receive an SMS).
                                         The security improvement is significant.
                                     {% endblocktrans %}
-
                                 </p>
                             </li>
                         {% endif %}
