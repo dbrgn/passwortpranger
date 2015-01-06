@@ -132,8 +132,6 @@ class Website(models.Model):
         if sum_pos > 6:
             sum_pos = 6
         sum_neg = sum(scores['negative'].itervalues())
-        if sum_neg < -6:
-            sum_neg = -6
         total = sum_neg + sum_pos
         if total < 0:
             total = 0
