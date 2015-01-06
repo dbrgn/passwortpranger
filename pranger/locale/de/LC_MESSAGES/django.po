@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 22:55+0100\n"
+"POT-Creation-Date: 2015-01-06 23:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,22 +128,35 @@ msgid "The password length is unlimited."
 msgstr ""
 
 #: front/templates/front/website.html:101
-msgid "Indicates a hashed password to save it."
+#, python-format
+msgid ""
+"\n"
+"                                    There is no reason to limit the\n"
+"                                    length of a password. On the contrary, "
+"it can\n"
+"                                    be an indication that the passwords are "
+"stored\n"
+"                                    insecurely. Here's a good post about "
+"this\n"
+"                                    topic: <a href=\"blog.knut.me\">%(url)s</"
+"a>\n"
+"                                    (German only).\n"
+"                                    "
 msgstr ""
 
-#: front/templates/front/website.html:109
+#: front/templates/front/website.html:116
 msgid "Negative score"
 msgstr ""
 
-#: front/templates/front/website.html:114
+#: front/templates/front/website.html:121
 msgid "Maximum negative score is 6 points. The final value can't be negative."
 msgstr ""
 
-#: front/templates/front/website.html:120
+#: front/templates/front/website.html:127
 msgid "The password length is limited to 16 chars."
 msgstr ""
 
-#: front/templates/front/website.html:124
+#: front/templates/front/website.html:131
 msgid ""
 "\n"
 "                                        A maximum length specified on a "
@@ -156,11 +169,11 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:136
+#: front/templates/front/website.html:143
 msgid "The password length is limited to 10 chars."
 msgstr ""
 
-#: front/templates/front/website.html:139
+#: front/templates/front/website.html:146
 msgid ""
 "\n"
 "                                    A maximum length specified on a password "
@@ -172,11 +185,11 @@ msgid ""
 "                                "
 msgstr ""
 
-#: front/templates/front/website.html:149
+#: front/templates/front/website.html:156
 msgid "The characters useable for a password are limited."
 msgstr ""
 
-#: front/templates/front/website.html:154
+#: front/templates/front/website.html:161
 msgid ""
 "\n"
 "                                        The prohibition of exotic symbols in "
@@ -185,12 +198,12 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:164
+#: front/templates/front/website.html:171
 msgid "The password is delivered by email during the registration process."
 msgstr ""
 
-#: front/templates/front/website.html:169
-#: front/templates/front/website.html:182
+#: front/templates/front/website.html:176
+#: front/templates/front/website.html:189
 msgid ""
 "\n"
 "                                        Emails are usually delivered in "
@@ -200,15 +213,15 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:178
+#: front/templates/front/website.html:185
 msgid "A changed password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:192
+#: front/templates/front/website.html:199
 msgid "A forgotten password is delivered by email"
 msgstr ""
 
-#: front/templates/front/website.html:197
+#: front/templates/front/website.html:204
 msgid ""
 "\n"
 "                                        In order to send a password in plain "
@@ -220,7 +233,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:209
+#: front/templates/front/website.html:216
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -231,7 +244,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:217
+#: front/templates/front/website.html:224
 msgid ""
 "\n"
 "                                        The password transmitted in plain "
@@ -239,17 +252,17 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:226
+#: front/templates/front/website.html:233
 msgid "Some pages are transmitted unsecured."
 msgstr ""
 
-#: front/templates/front/website.html:231
+#: front/templates/front/website.html:238
 msgid ""
 "The password can most likely not be intercepted, but the user account could "
 "be stolen."
 msgstr ""
 
-#: front/templates/front/website.html:241
+#: front/templates/front/website.html:248
 #, python-format
 msgctxt "TLS Link"
 msgid ""
@@ -261,6 +274,6 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: front/templates/front/website.html:249
+#: front/templates/front/website.html:256
 msgid "The user is responsible for his safety."
 msgstr ""
