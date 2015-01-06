@@ -6,29 +6,34 @@
 
 {% block content %}
     <div class="container intro">
-        <h1>{{ site.name }}</h1>
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <h1>{{ site.name }}</h1>
 
-        <p><a href="{{ site.url }}" target="_blank"><span class="glyphicon glyphicon-new-window"></span> {{ site.url }}
-        </a></p>
+                <p>
+                    <a href="{{ site.url }}" target="_blank">
+                        <span class="glyphicon glyphicon-new-window"></span> {{ site.url }}
+                    </a>
+                </p>
 
-        {{ site.description|linebreaks|urlize }}
-
+                {{ site.description|linebreaks|urlize }}
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="rating-wheel score-{{ site.ratings.total }}">
+                    <i class="p1">Passwortpranger</i>
+                    <em>{{ site.ratings.total }}/6</em>
+                    <i class="p2">Score</i>
+                </div>
+            </div>
+        </div>
         <br>
 
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="result">
-                    <div class="total score-{{ site.ratings.total }}">
-                        <h4>{% trans "Total Score" %}</h4> <em>{{ site.ratings.total }}/6</em>
-
-                        <p>
-                            {% blocktrans with sitename=site.name context "total points" %}The total score of
-                                {{ sitename }} is{% endblocktrans %}
-                        </p>
-                    </div>
 
                         <div class="subtotal positive">
-                            <h4>{% trans "Positive score" %}</h4> <span>17</span><em>{{ site.ratings.positive }}</em>
+                            <h4>{% trans "Positive score" %}</h4> <em>{{ site.ratings.positive }}</em>
 
                             <p>{% trans "Maximum positive score is 6 points" %}</p>
                         </div>
@@ -107,7 +112,7 @@
                         <div class="subtotal negative">
                             <h4>
                                 {% trans "Negative score" %}
-                            </h4> <span>17</span><em>{{ site.ratings.negative }}</em>
+                            </h4> <em>{{ site.ratings.negative }}</em>
 
                             <p>
 
@@ -252,6 +257,14 @@
                         {% endif %}
                     </ul>
 
+                    <div class="total score-{{ site.ratings.total }}">
+                        <h4>{% trans "Total Score" %}</h4> <em>{{ site.ratings.total }}/6</em>
+
+                        <p>
+                            {% blocktrans with sitename=site.name context "total points" %}The total score of
+                                {{ sitename }} is{% endblocktrans %}
+                        </p>
+                    </div>  
                 </div>
 
             </div>
