@@ -17,7 +17,8 @@ echo "---> Installing dependencies..."
 apt-get install -q -y \
   postgresql-9.1 postgresql-client-9.1 libpq-dev \
   python-dev python-virtualenv python-pip \
-  git mercurial || exit 0
+  git mercurial \
+  libxml2-dev libxslt-dev || exit 0
 
 echo "---> Setting up virtualenv..."
 cd /home/vagrant
