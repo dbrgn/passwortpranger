@@ -4,15 +4,15 @@
 
 {% block bodyclass %}submission{% endblock %}
 
-{% block title %}Seite Melden - Passwortpranger{% endblock %}
+{% block title %}{% trans 'Submit Website' %} - Passwortpranger{% endblock %}
 
 {% block content %}
     <div class="container submission">
-        <h1>Seite Melden</h1>
+        <h1>{% trans 'Submit Website' %}</h1>
 
-        <p>Hier kannst du Websites melden, von denen du den Verdacht hast, dass sie
-        unsicher oder verantwortungslos mit Passwörtern umgehen. Wir werden diese
-        dann prüfen und in unseren Katalog aufnehmen.</p>
+        <p>{% blocktrans %}Here you can submit websites where you suspect that
+        they don't handle passwords safely. Our team will then review them and
+        add it to this catalog.{% endblocktrans %}</p>
 
         <form role="form" action="" method="post" >
             {% csrf_token %}

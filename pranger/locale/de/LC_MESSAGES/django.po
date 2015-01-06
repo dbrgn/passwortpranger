@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 21:32+0000\n"
+"POT-Creation-Date: 2015-01-06 22:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: front/templates/front/submission.html:7
+#: front/templates/front/submission.html:11
+msgid "Submit Website"
+msgstr ""
+
+#: front/templates/front/submission.html:13
+msgid ""
+"Here you can submit websites where you suspect that\n"
+"        they don't handle passwords safely. Our team will then review them "
+"and\n"
+"        add it to this catalog."
+msgstr ""
+
+#: front/templates/front/submission_thanks.html:8
+msgctxt "Headline, capitalize all words"
+msgid "Submission Sent"
+msgstr ""
+
+#: front/templates/front/submission_thanks.html:9
+msgid ""
+"Thanks for your submission! It will be published after it has been\n"
+"        reviewed by our team."
+msgstr ""
+
+#: front/templates/front/submission_thanks.html:11
+msgid "Back to our <a href=\"/\">home page</a>..."
+msgstr ""
 
 #: front/templates/front/website.html:22
 msgid "Total Score"
