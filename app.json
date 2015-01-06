@@ -27,6 +27,13 @@
         "SECRET_KEY": {
             "description": "The Django SECRET_KEY.",
             "generator": "secret"
+        },
+        "ADMINS": {
+            "description": "The admins that will receive notification e-mails. Format: `Admin One:admin1@example.com,Admin Two:admin2@example.com,...`"
+        },
+        "SITE_URL": {
+            "description": "The base URL of your site, without trailing slash.",
+            "default": "https://passwortpranger.ch"
         }
     }
 }

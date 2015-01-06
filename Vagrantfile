@@ -27,6 +27,7 @@ export DJANGO_DEBUG=True
 sudo -u vagrant echo "export DJANGO_DEBUG=True" >> VIRTUAL/bin/activate
 export DATABASE_URL='postgres:///pranger'
 sudo -u vagrant echo "export DATABASE_URL='postgres:///pranger'" >> VIRTUAL/bin/activate
+export ADMINS='John Doe:jdoe@example.com,Jane Meierhans:jmh@example.com'
 sudo -u vagrant VIRTUAL/bin/pip install -r pranger/requirements/dev.txt || exit 0
 
 echo "---> Creating database..."

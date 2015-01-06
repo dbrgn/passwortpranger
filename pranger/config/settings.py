@@ -30,9 +30,9 @@ DEBUG = env('DJANGO_DEBUG', 'False').lower() in true_values
 TEMPLATE_DEBUG = DEBUG
 SHOW_DEBUG_TOOLBAR = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
+# Format: "Name1:email1,name2:email2"
+ADMINS_LIST = env('ADMINS', '')
+ADMINS = tuple(admin.rsplit(':', 1) for admin in ADMINS_LIST.split(',') if admin)
 
 DATABASES = {
     'default': dj_database_url.config(),
@@ -42,6 +42,8 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS_LIST = env('ALLOWED_HOSTS', '')
 ALLOWED_HOSTS = filter(None, ALLOWED_HOSTS_LIST.split(','))
+
+SITE_URL = env('SITE_URL', 'http://localhost:8000')
 
 # Internal IPs
 INTERNAL_IPS = ('127.0.0.1',)
