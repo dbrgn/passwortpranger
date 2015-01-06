@@ -1,6 +1,7 @@
+@import variables
 @import normalize
+@import bootstrapReset
 
-$background-color: #d6081c
 
 =clearfix
     &:after
@@ -64,29 +65,41 @@ header
     position: relative
     background-color: $background-color
     padding: 20px
-    h1 a
-        text-shadow: 0 0 1px rgba(0,0,0,.5)
+    h1 
         margin: 0
-        padding: 0
-        float: left
-        font-size: 36px
-        line-height: 36px
-        font-weight: 300
-        &:hover
-            text-decoration: none
+        a
+            text-shadow: 0 0 1px rgba(0,0,0,.5)
+            margin: 0
+            padding: 0
+            font-size: 36px
+            line-height: 36px
+            font-weight: 300
+            &:hover
+                text-decoration: none
     nav
         display: block
         +clearfix
+        margin: 8px auto
         float: right
+        @media screen and (max-width: 768px)
+            float: left
         a
+            text-decoration: none
             float: left
             display: block
-            padding: 0.5em 1em
+            padding: 0.5em 0.8em
             list-style-type: none
             margin-right: 1em
-            background-color: #9b0b03
+            background-color: $dark-main
         a:last-child
             margin: 0
+        a>span
+            color: #fff
+            font-size: 12px
+            line-height: 22px
+        a:hover
+            text-decoration: none
+            background-color: darken($dark-main, 5%)
     a
         color: #fff
         &:hover
@@ -163,6 +176,10 @@ footer
         color: white
         +total
 
+.submission
+    input.btn
+        padding-left: 20px
+        padding-right: 20px
 
 //@for $var from 0 through 6
 //    $numericValue: 36

@@ -27,12 +27,17 @@
 
 <header>
     <div class="container">
-        <h1><a href="{% url 'home' %}">Passwortpranger</a></h1>
-        <nav>
-            <a href="/">Liste</a>
-            <a href="{% url 'submission' %}">Seite Melden</a>
-            <a href="{% url 'info' %}">Infos</a>
-        </nav>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <h1><a href="{% url 'home' %}">Passwortpranger</a></h1>
+            </div>
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <nav>
+                    <a href="/"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Liste</a>
+                    <a href="{% url 'submission' %}"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Seite Melden</a>
+                    <a href="{% url 'info' %}"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Infos</a>
+                </nav>
+            </div>
     </div>
 </header>
 

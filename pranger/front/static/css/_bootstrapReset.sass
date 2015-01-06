@@ -1,0 +1,18 @@
+// overwrites bootstrap styles
+.btn-primary
+    background-color: $dark-main
+    border-color: darken($dark-main, 10%)
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary
+    background-color: darken($dark-main, 3%)
+    border-color: darken($dark-main, 3%)
+
+body #main
+    input, textarea
+        -webkit-box-shadow: none
+        box-shadow: none
+        border-radius: 0px
+    input:focus, textarea:focus
+        -webkit-box-shadow: none
+        box-shadow: none
+        border-color: #000 !important
