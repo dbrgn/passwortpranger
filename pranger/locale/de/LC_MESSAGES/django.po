@@ -288,16 +288,14 @@ msgstr ""
 "werden."
 
 #: front/templates/front/website.html:243
-msgid "Some pages are transmitted unsecured."
-msgstr "Einige Seiten werden verschlüsselt übermittelt."
+msgid "Some pages are transmitted without encryption."
+msgstr "Einige Seiten werden unverschlüsselt übermittelt."
 
 #: front/templates/front/website.html:248
 msgid ""
-"The password can most likely not be intercepted, but the user account could "
-"be stolen."
+"This might allow an attacker to take over a login session on this website."
 msgstr ""
-"Das Passwort kann zwar nicht abgefangen werden, aber das Benutzerkonto kann "
-"einfach übernommen werden."
+"Dies könnte es einem Angreifer ermöglichen, eine Benutzer-Sitzung auf dieser Website zu übernehmen."
 
 #: front/templates/front/website.html:258
 #, python-format

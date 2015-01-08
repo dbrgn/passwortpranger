@@ -240,12 +240,12 @@
                         {% if "TLS_SOME" in site.scores.negative %}
                             <li>
                                 <h4>
-                                    {% trans "Some pages are transmitted unsecured." %}
+                                    {% trans "Some pages are transmitted without encryption." %}
                                 </h4>
                                 <span>{{ site.scores.negative.TLS_SOME }}</span>
 
                                 <p>
-                                    {% trans "The password can most likely not be intercepted, but the user account could be stolen." %}
+                                    {% trans "This might allow an attacker to take over a login session on this website." %}
                                 </p>
                             </li>
                         {% endif %}
