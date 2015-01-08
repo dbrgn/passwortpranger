@@ -212,11 +212,13 @@ if DEBUG:
     MEDIA_URL = '/media/'
 else:
     AWS_STORAGE_BUCKET_NAME = 'passwortpranger'
+    AWS_S3_URL_PROTOCOL = ''  # Protocol relative URLs
+    AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
     AWS_PRELOAD_METADATA = True
     AWS_QUERYSTRING_AUTH = False  # Don't include auth in every url
     AWS_ACCESS_KEY_ID = require_env('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = require_env('AWS_SECRET_ACCESS_KEY')
-    STATIC_URL = COMPRESS_URL = '//{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+    STATIC_URL = COMPRESS_URL = '{}//{}/'.format(AWS_S3_URL_PROTOCOL, AWS_S3_CUSTOM_DOMAIN)
     MEDIA_URL = '//{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     STATICFILES_STORAGE = 'config.storage.CachedS3BotoStorage'
