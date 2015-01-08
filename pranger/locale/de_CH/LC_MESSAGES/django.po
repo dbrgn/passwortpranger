@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# 
+# Translations for Passwortpranger.
+# Copyright (C) 2014-2015
+# This file is distributed under the same license as the passwortpranger source.
+#
 # Translators:
 # Danilo Bargen <gezuru@gmail.com>, 2015
 # Remo Liebi <rliebi@hsr.ch>, 2015
@@ -9,15 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Passwortpranger\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 23:31+0100\n"
+"POT-Creation-Date: 2015-01-08 08:59+0100\n"
 "PO-Revision-Date: 2015-01-06 22:37+0000\n"
 "Last-Translator: Danilo Bargen <gezuru@gmail.com>\n"
-"Language-Team: German (Switzerland) (http://www.transifex.com/projects/p/passwortpranger/language/de_CH/)\n"
+"Language-Team: German (Switzerland) (http://www.transifex.com/projects/p/"
+"passwortpranger/language/de_CH/)\n"
+"Language: de_CH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_CH\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings.py:64
+msgid "German"
+msgstr ""
 
 #: front/templates/front/submission.html:8
 #: front/templates/front/submission.html:12
@@ -44,7 +49,9 @@ msgstr "Meldung Abgeschickt"
 msgid ""
 "Thanks for your submission! It will be published after it has been\n"
 "        reviewed by our team."
-msgstr "Vielen Dank für deine Meldung! Unser Team wird diese prüfen\nund gegebenenfalls in unseren Katalog aufnehmen."
+msgstr ""
+"Vielen Dank für deine Meldung! Unser Team wird diese prüfen\n"
+"und gegebenenfalls in unseren Katalog aufnehmen."
 
 #: front/templates/front/submission_thanks.html:11
 msgid "Back to our <a href=\"/\">home page</a>..."
@@ -68,7 +75,9 @@ msgid ""
 "\n"
 "                                    Base points are used for calculation.\n"
 "                                "
-msgstr "\nBasispunkte werden für die Berechnung verwendet"
+msgstr ""
+"\n"
+"Basispunkte werden für die Berechnung verwendet"
 
 #: front/templates/front/website.html:57
 #, python-format
@@ -76,15 +85,20 @@ msgctxt "TLS Link"
 msgid ""
 "\n"
 "                                        A %(link)s\n"
-"                                        connection is enforced through the whole website.\n"
+"                                        connection is enforced through the "
+"whole website.\n"
 "                                    "
-msgstr "\nDie gesamte Website ist mittels %(link)s verschlüsselt."
+msgstr ""
+"\n"
+"Die gesamte Website ist mittels %(link)s verschlüsselt."
 
 #: front/templates/front/website.html:65
 msgid ""
 "Thanks to an encrypted connection, all data is being transmitted securely "
 "through the network."
-msgstr "Dadurch dass die Verbindung zu dieser Website verschlüsselt ist, werden alle Daten sicher übermittelt."
+msgstr ""
+"Dadurch dass die Verbindung zu dieser Website verschlüsselt ist, werden alle "
+"Daten sicher übermittelt."
 
 #: front/templates/front/website.html:72
 msgid "Two Factor Authentication is available"
@@ -93,12 +107,21 @@ msgstr "Zwei-Faktor-Authentisierung ist verfügbar"
 #: front/templates/front/website.html:77
 msgid ""
 "\n"
-"                                        The authenticating user has two challenges to complete.\n"
-"                                        Usually he has to know something (password) and has to have something (i.e.\n"
-"                                        access to a mobile phone to receive an SMS).\n"
-"                                        The security improvement is significant.\n"
+"                                        The authenticating user has two "
+"challenges to complete.\n"
+"                                        Usually he has to know something "
+"(password) and has to have something (i.e.\n"
+"                                        access to a mobile phone to receive "
+"an SMS).\n"
+"                                        The security improvement is "
+"significant.\n"
 "                                    "
-msgstr "\nDer Benutzer muss sich mit zwei Faktoren authentisieren. Dies ist in den meisten Fällen ein Faktor den er weiss (ein Paswort) sowie etwas was er besitzt (SMS Code aufs Mobiltelefon).\nDer Sicherheitsgewinn dadurch ist erheblich."
+msgstr ""
+"\n"
+"Der Benutzer muss sich mit zwei Faktoren authentisieren. Dies ist in den "
+"meisten Fällen ein Faktor den er weiss (ein Paswort) sowie etwas was er "
+"besitzt (SMS Code aufs Mobiltelefon).\n"
+"Der Sicherheitsgewinn dadurch ist erheblich."
 
 #: front/templates/front/website.html:89
 msgid "The password strength is indicated visually"
@@ -108,7 +131,9 @@ msgstr "Die Passwortstärke wird grafisch dargestellt."
 msgid ""
 "Displaying the password strength encourages the user to chose a more safe "
 "password."
-msgstr "Dadurch dass die Passwortstärke visuell dargestellt wird, wird der Benutzer dazu motiviert, ein sichereres Passwort zu verwenden."
+msgstr ""
+"Dadurch dass die Passwortstärke visuell dargestellt wird, wird der Benutzer "
+"dazu motiviert, ein sichereres Passwort zu verwenden."
 
 #: front/templates/front/website.html:101
 msgid "The password length is unlimited."
@@ -120,13 +145,22 @@ msgstr "Die Passwortlänge wird nicht limitiert."
 msgid ""
 "\n"
 "                                    There is no reason to limit the\n"
-"                                    length of a password. On the contrary, it can\n"
-"                                    be an indication that the passwords are stored\n"
-"                                    insecurely. Here's a good post about this\n"
-"                                    topic: <a href=\"%(url)s\">blog.knut.me</a>\n"
+"                                    length of a password. On the contrary, "
+"it can\n"
+"                                    be an indication that the passwords are "
+"stored\n"
+"                                    insecurely. Here's a good post about "
+"this\n"
+"                                    topic: <a href=\"%(url)s\">blog.knut.me</"
+"a>\n"
 "                                    (German only).\n"
 "                                    "
-msgstr "\nEs gibt keinen Grund dafür, die Passwortlänge auf einer Website zu limitieren. Im Gegenteil, es kann ein Hinweis darauf sein dass die Passwörter unsicher gespeichert werden. Hier ist ein guter Text zu diesen Thema: <a href=\"%(url)s\">blog.knut.me</a>."
+msgstr ""
+"\n"
+"Es gibt keinen Grund dafür, die Passwortlänge auf einer Website zu "
+"limitieren. Im Gegenteil, es kann ein Hinweis darauf sein dass die "
+"Passwörter unsicher gespeichert werden. Hier ist ein guter Text zu diesen "
+"Thema: <a href=\"%(url)s\">blog.knut.me</a>."
 
 #: front/templates/front/website.html:121
 msgid "Negative score"
@@ -134,7 +168,9 @@ msgstr "Negative Punkte"
 
 #: front/templates/front/website.html:126
 msgid "Maximum negative score is 6 points. The final value can't be negative."
-msgstr "Die maximale Negativpunktzahl beträgt 6. Die berechnete Gesamtpunktzahl kann nicht negativ werden."
+msgstr ""
+"Die maximale Negativpunktzahl beträgt 6. Die berechnete Gesamtpunktzahl kann "
+"nicht negativ werden."
 
 #: front/templates/front/website.html:132
 msgid "The password length is limited to 16 chars."
@@ -148,38 +184,60 @@ msgstr "Die Passwortlänge ist auf 10 Zeichen limitiert."
 #, python-format
 msgid ""
 "\n"
-"                                    Passwords of this length are too short and can be\n"
-"                                    cracked with today's hardware in a reasonable amount of time.\n"
-"                                    Furthermore, this limitation can be be an indication that the\n"
-"                                    passwords are stored insecurely. Here's a good post about this\n"
-"                                    topic: <a href=\"%(url)s\">blog.knut.me</a> (German only).\n"
+"                                    Passwords of this length are too short "
+"and can be\n"
+"                                    cracked with today's hardware in a "
+"reasonable amount of time.\n"
+"                                    Furthermore, this limitation can be be "
+"an indication that the\n"
+"                                    passwords are stored insecurely. Here's "
+"a good post about this\n"
+"                                    topic: <a href=\"%(url)s\">blog.knut.me</"
+"a> (German only).\n"
 "                                    "
-msgstr "\nPasswörter von dieser Länge sind zu kurz und können mit heutiger Hardware in relativ kurzer Zeit geknackt werden. Desweiteren kann diese Limitierung ein Hinweis darauf sein, dass die Passwörter unsicher gespeichert werden. Hier ist ein guter Text zu diesen Thema: <a href=\"%(url)s\">blog.knut.me</a>."
+msgstr ""
+"\n"
+"Passwörter von dieser Länge sind zu kurz und können mit heutiger Hardware in "
+"relativ kurzer Zeit geknackt werden. Desweiteren kann diese Limitierung ein "
+"Hinweis darauf sein, dass die Passwörter unsicher gespeichert werden. Hier "
+"ist ein guter Text zu diesen Thema: <a href=\"%(url)s\">blog.knut.me</a>."
 
 #: front/templates/front/website.html:166
 msgid "The characters useable for a password are limited."
-msgstr "Die Zeichen, die für ein Passwort verwendet werden können sind eingeschränkt."
+msgstr ""
+"Die Zeichen, die für ein Passwort verwendet werden können sind eingeschränkt."
 
 #: front/templates/front/website.html:171
 msgid ""
 "\n"
-"                                        The prohibition of exotic symbols in password results in a lower count of\n"
+"                                        The prohibition of exotic symbols in "
+"password results in a lower count of\n"
 "                                        different possible passwords.\n"
 "                                    "
-msgstr "\nDadurch, dass exotische Zeichen unterbunden werden, stehen weniger verschieden Passwort variationen zur Verfügung."
+msgstr ""
+"\n"
+"Dadurch, dass exotische Zeichen unterbunden werden, stehen weniger "
+"verschieden Passwort variationen zur Verfügung."
 
 #: front/templates/front/website.html:181
 msgid "The password is delivered by email during the registration process."
-msgstr "Das Passwort wird während der Registrierung im Klartext an den Benutzer übermittelt. "
+msgstr ""
+"Das Passwort wird während der Registrierung im Klartext an den Benutzer "
+"übermittelt. "
 
 #: front/templates/front/website.html:186
 #: front/templates/front/website.html:199
 msgid ""
 "\n"
-"                                        Emails are usually delivered in plain text.\n"
-"                                        You should always expect that someone is reading your emails.\n"
+"                                        Emails are usually delivered in "
+"plain text.\n"
+"                                        You should always expect that "
+"someone is reading your emails.\n"
 "                                    "
-msgstr "\nEmails werden üblicherweise im Klartext übermittelt.\nDu solltest immer damit rechnen, dass deine Emails mitgelesen werden!"
+msgstr ""
+"\n"
+"Emails werden üblicherweise im Klartext übermittelt.\n"
+"Du solltest immer damit rechnen, dass deine Emails mitgelesen werden!"
 
 #: front/templates/front/website.html:195
 msgid "A changed password is delivered by email"
@@ -192,12 +250,18 @@ msgstr "Ein vergessenes Passwort wird im Klartext per Email übermittelt."
 #: front/templates/front/website.html:214
 msgid ""
 "\n"
-"                                        In order to send a password in plain text, the website operator has to save it\n"
+"                                        In order to send a password in plain "
+"text, the website operator has to save it\n"
 "                                        in plain text.\n"
-"                                        This could not only result in data theft by third parties, even the website\n"
+"                                        This could not only result in data "
+"theft by third parties, even the website\n"
 "                                        administraor could abuse it.\n"
 "                                    "
-msgstr "\nDamit man sich das Passwort im Klartext zusenden lassen kann, muss die Webseite das Passwort ungesichtert abspeichern. Das könnte nicht nur in falsche Hände gelanden, sondern auch von Adminstratoren missbraucht werden."
+msgstr ""
+"\n"
+"Damit man sich das Passwort im Klartext zusenden lassen kann, muss die "
+"Webseite das Passwort ungesichtert abspeichern. Das könnte nicht nur in "
+"falsche Hände gelanden, sondern auch von Adminstratoren missbraucht werden."
 
 #: front/templates/front/website.html:226
 #, python-format
@@ -205,16 +269,23 @@ msgctxt "TLS Link"
 msgid ""
 "\n"
 "                                        A %(link)s\n"
-"                                        connection is not possible on this website.\n"
+"                                        connection is not possible on this "
+"website.\n"
 "                                    "
-msgstr "\nEs ist keine %(link)s Verschlüsselung implementiert."
+msgstr ""
+"\n"
+"Es ist keine %(link)s Verschlüsselung implementiert."
 
 #: front/templates/front/website.html:234
 msgid ""
 "\n"
-"                                        The password transmitted in plain text an could be intercepted.\n"
+"                                        The password transmitted in plain "
+"text an could be intercepted.\n"
 "                                    "
-msgstr "\nDas Passwort wird beim Login im Klartext übertragen und kann abgefangen werden."
+msgstr ""
+"\n"
+"Das Passwort wird beim Login im Klartext übertragen und kann abgefangen "
+"werden."
 
 #: front/templates/front/website.html:243
 msgid "Some pages are transmitted unsecured."
@@ -224,17 +295,24 @@ msgstr "Einige Seiten werden verschlüsselt übermittelt."
 msgid ""
 "The password can most likely not be intercepted, but the user account could "
 "be stolen."
-msgstr "Das Passwort kann zwar nicht abgefangen werden, aber das Benutzerkonto kann einfach übernommen werden."
+msgstr ""
+"Das Passwort kann zwar nicht abgefangen werden, aber das Benutzerkonto kann "
+"einfach übernommen werden."
 
 #: front/templates/front/website.html:258
 #, python-format
 msgctxt "TLS Link"
 msgid ""
 "\n"
-"                                        All pages are available through %(link)s,\n"
-"                                        but the user is not redirected automatically.\n"
+"                                        All pages are available through "
+"%(link)s,\n"
+"                                        but the user is not redirected "
+"automatically.\n"
 "                                    "
-msgstr "\nAlle Seiten stehen in %(link)s zur Verfügung, allerdings wird Benutzer nicht automatisch weitergeleitet."
+msgstr ""
+"\n"
+"Alle Seiten stehen in %(link)s zur Verfügung, allerdings wird Benutzer nicht "
+"automatisch weitergeleitet."
 
 #: front/templates/front/website.html:266
 msgid "The user is responsible for his safety."

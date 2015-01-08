@@ -5,6 +5,7 @@ from __future__ import print_function, division, absolute_import, unicode_litera
 import os
 
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.translation import ugettext_lazy as _
 
 import dj_database_url
 from unipath import Path
@@ -56,7 +57,12 @@ TIME_ZONE = 'Europe/Zurich'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de_CH'
+
+# Available languages
+LANGUAGES = (
+    ('de_CH', _('German')),
+)
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
