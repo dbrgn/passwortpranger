@@ -26,10 +26,14 @@ msgstr "Seite Melden"
 
 #: front/templates/front/submission.html:14
 msgid ""
-"Here you can submit websites where you suspect that\n"
-"        they don't handle passwords safely. Our team will then review them and\n"
-"        add it to this catalog."
-msgstr "Hier kannst du Websites melden, von denen du den Verdacht hast, dass sie\nunsicher oder verantwortungslos mit Passwörtern umgehen. Wir werden diese\ndann prüfen und in unseren Katalog aufnehmen."
+"With this form you can submit websites where you suspect that\n"
+"        they don't handle passwords safely. Our team will then review them "
+"and\n"
+"        add them to this catalog, if appropriate."
+msgstr ""
+"Hier kannst du Websites melden, von denen du den Verdacht hast, dass sie\n"
+"unsicher oder verantwortungslos mit Passwörtern umgehen. Wir werden diese\n"
+"dann prüfen und in unseren Katalog aufnehmen, falls sinnvoll."
 
 #: front/templates/front/submission_thanks.html:8
 msgctxt "Headline, capitalize all words"
