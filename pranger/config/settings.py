@@ -216,8 +216,8 @@ else:
     AWS_QUERYSTRING_AUTH = False  # Don't include auth in every url
     AWS_ACCESS_KEY_ID = require_env('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = require_env('AWS_SECRET_ACCESS_KEY')
-    STATIC_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
-    MEDIA_URL = 'https://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+    STATIC_URL = COMPRESS_URL = '//{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+    MEDIA_URL = '//{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     STATICFILES_STORAGE = 'config.storage.CachedS3BotoStorage'
     COMPRESS_STORAGE = STATICFILES_STORAGE
