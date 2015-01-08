@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Passwortpranger\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-08 08:59+0100\n"
+"POT-Creation-Date: 2015-01-08 15:29+0100\n"
 "PO-Revision-Date: 2015-01-06 22:37+0000\n"
 "Last-Translator: Danilo Bargen <gezuru@gmail.com>\n"
 "Language-Team: German (Switzerland) (http://www.transifex.com/projects/p/"
@@ -22,7 +22,35 @@ msgstr ""
 
 #: config/settings.py:64
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
+
+#: front/models.py:157
+msgid "Catastrophic"
+msgstr "Katastrophal"
+
+#: front/models.py:158
+msgid "Very Bad"
+msgstr "Sehr Schlecht"
+
+#: front/models.py:159
+msgid "Bad"
+msgstr "Schlecht"
+
+#: front/models.py:160
+msgid "Insufficient"
+msgstr "Ungenügend"
+
+#: front/models.py:161
+msgid "Acceptable"
+msgstr "Genügend"
+
+#: front/models.py:162
+msgid "Good"
+msgstr "Gut"
+
+#: front/models.py:163
+msgid "Outstanding"
+msgstr "Hervorragend"
 
 #: front/templates/front/submission.html:8
 #: front/templates/front/submission.html:12
@@ -56,6 +84,11 @@ msgstr ""
 #: front/templates/front/submission_thanks.html:11
 msgid "Back to our <a href=\"/\">home page</a>..."
 msgstr "Zurück zu unserer <a href=\"/\">Startseite</a>..."
+
+#: front/templates/front/website.html:25
+#, python-format
+msgid "%(score)s security"
+msgstr "Sicherheit %(score)s"
 
 #: front/templates/front/website.html:36
 msgid "Positive score"
@@ -295,7 +328,8 @@ msgstr "Einige Seiten werden unverschlüsselt übermittelt."
 msgid ""
 "This might allow an attacker to take over a login session on this website."
 msgstr ""
-"Dies könnte es einem Angreifer ermöglichen, eine Benutzer-Sitzung auf dieser Website zu übernehmen."
+"Dies könnte es einem Angreifer ermöglichen, eine Benutzer-Sitzung auf dieser "
+"Website zu übernehmen."
 
 #: front/templates/front/website.html:258
 #, python-format

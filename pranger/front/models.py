@@ -7,6 +7,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.text import slugify
 from django.utils.functional import cached_property
+from django.utils.translation import ugettext_lazy as _
 
 from model_utils import Choices
 
@@ -139,6 +140,29 @@ class Website(models.Model):
         if total < 0:
             total = 0
         return Rating(sum_pos, sum_neg, total)
+
+    @cached_property
+    def total_score(self):
+        """
+        Return the total score (0-6) for this site.
+        """
+        return self.ratings.total
+
+    @cached_property
+    def total_score_verbose(self):
+        """
+        Return the total score for this site as text.
+        """
+        scores = {
+            0: _('Catastrophic'),
+            1: _('Very Bad'),
+            2: _('Bad'),
+            3: _('Insufficient'),
+            4: _('Acceptable'),
+            5: _('Good'),
+            6: _('Outstanding'),
+        }
+        return scores.get(self.total_score, unicode(self.total_score))
 
     def get_canonical_slug(self):
         """

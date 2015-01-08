@@ -29,7 +29,7 @@
                 <tr>
                     <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.name }}</a></td>
                     <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.url }}</a></td>
-                    <td>{{ site.ratings.total }} / 6</td>
+                    <td><span title="{{ site.total_score_verbose }}">{{ site.total_score }} / 6</span></td>
                 </tr>
             {% endfor %}
             </tbody>

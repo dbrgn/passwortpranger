@@ -19,10 +19,10 @@
                 {{ site.description|linebreaks|urlize }}
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="rating-wheel score-{{ site.ratings.total }}">
+                <div class="rating-wheel score-{{ site.total_score }}">
                     <i class="p1">Passwortpranger</i>
-                    <em>{{ site.ratings.total }}/6</em>
-                    <i class="p2">Score</i>
+                    <em>{{ site.total_score }}/6</em>
+                    <i class="p2">{% blocktrans with score=site.total_score_verbose %}{{ score }} security{% endblocktrans %}</i>
                 </div>
             </div>
         </div>
@@ -269,8 +269,8 @@
                         {% endif %}
                     </ul>
 
-                    <div class="total score-{{ site.ratings.total }}">
-                        <h4>{% trans "Total Score" %}</h4> <em>{{ site.ratings.total }}/6</em>
+                    <div class="total score-{{ site.total_score }}">
+                        <h4>{% trans "Total Score" %}</h4> <em>{{ site.total_score }}/6</em>
 
                         <p>
                             {% blocktrans with sitename=site.name context "total points" %}The total score of
