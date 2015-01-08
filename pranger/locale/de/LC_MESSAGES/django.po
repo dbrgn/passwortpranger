@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Passwortpranger\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-08 15:29+0100\n"
+"POT-Creation-Date: 2015-01-08 15:43+0100\n"
 "PO-Revision-Date: 2015-01-06 22:37+0000\n"
 "Last-Translator: Danilo Bargen <gezuru@gmail.com>\n"
 "Language-Team: German (Switzerland) (http://www.transifex.com/projects/p/"
@@ -110,7 +110,8 @@ msgid ""
 "                                "
 msgstr ""
 "\n"
-"Basispunkte werden für die Berechnung verwendet"
+"Basispunkte werden für die Berechnung verwendet.\n"
+"                                "
 
 #: front/templates/front/website.html:57
 #, python-format
@@ -249,8 +250,8 @@ msgid ""
 "                                    "
 msgstr ""
 "\n"
-"Dadurch, dass exotische Zeichen unterbunden werden, stehen weniger "
-"verschieden Passwort variationen zur Verfügung."
+"Dadurch, dass exotische Zeichen unterbunden werden, sind weniger verschieden "
+"Passwortvariationen möglich."
 
 #: front/templates/front/website.html:181
 msgid "The password is delivered by email during the registration process."
@@ -321,8 +322,8 @@ msgstr ""
 "werden."
 
 #: front/templates/front/website.html:243
-msgid "Some pages are transmitted without encryption."
-msgstr "Einige Seiten werden unverschlüsselt übermittelt."
+msgid "Some contents are transmitted without encryption."
+msgstr "Einige Inhalte werden unverschlüsselt übermittelt."
 
 #: front/templates/front/website.html:248
 msgid ""
