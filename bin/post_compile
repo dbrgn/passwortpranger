@@ -2,7 +2,5 @@
 cd pranger
 echo "-----> Compressing static files"
 ./manage.py compress
-echo "-----> Compiling i18n messages"
-./manage.py compilemessages
 echo "-----> Applying migrations"
 ./manage.py migrate
