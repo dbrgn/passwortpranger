@@ -18,6 +18,12 @@ class HomeView(ListView):
     model = models.Website
     template_name = 'front/home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        sortfunc = lambda w: (w.total_score, w.name)
+        context['sorted_object_list'] = sorted(self.object_list, key=sortfunc)
+        return context
+
 
 class WebsiteView(CanonicalSlugDetailMixin, DetailView):
     model = models.Website

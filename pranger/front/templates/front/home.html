@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for site in object_list %}
+            {% for site in sorted_object_list %}
                 <tr>
                     <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.name }}</a></td>
                     <td><a href="{% url "website" pk=site.pk slug=site.get_canonical_slug %}">{{ site.url }}</a></td>
