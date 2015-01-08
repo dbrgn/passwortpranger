@@ -78,6 +78,11 @@ USE_TZ = True
 # Path to the project root
 PROJECT_ROOT = Path(__file__).ancestor(2)
 
+# Path to the locales
+LOCALE_PATHS = (
+    PROJECT_ROOT.child('locale'),
+)
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = env('SECRET_KEY', 'DEBUG_SECRET_KEY')
 if SECRET_KEY == 'DEBUG_SECRET_KEY' and DEBUG is False:
@@ -85,8 +90,9 @@ if SECRET_KEY == 'DEBUG_SECRET_KEY' and DEBUG is False:
             'generate one with `./manage.py generate_secret_key`.')
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
