@@ -214,6 +214,7 @@ else:
     AWS_STORAGE_BUCKET_NAME = 'passwortpranger'
     AWS_S3_URL_PROTOCOL = ''  # Protocol relative URLs
     AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+    AWS_S3_SECURE_URLS = False
     AWS_PRELOAD_METADATA = True
     AWS_QUERYSTRING_AUTH = False  # Don't include auth in every url
     AWS_ACCESS_KEY_ID = require_env('AWS_ACCESS_KEY_ID')
