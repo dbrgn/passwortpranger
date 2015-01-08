@@ -74,8 +74,6 @@ header
             font-size: 36px
             line-height: 36px
             font-weight: 300
-            &:hover
-                text-decoration: none
     nav
         display: block
         +clearfix
@@ -100,10 +98,9 @@ header
         a:hover
             text-decoration: none
             background-color: darken($dark-main, 5%)
-    a
-        color: #fff
-        &:hover
-            color: white
+    a, a:hover, a:active, a:focus
+        color: white
+        text-decoration: none
 
 footer
     p
