@@ -33,12 +33,13 @@ class Website(models.Model):
         (0, 'no', 'Nein'),
         (1, 'partial', 'Partiell'),
         (2, 'everywhere', 'Überall'),
-        (3, 'forced', 'Forced')
+        (3, 'forced', 'Forced'),
     )
     PW_MAX_LENGTH_CHOICES = Choices(
         (0, 'below_16', '<16'),
         (1, 'below_10', '<10'),
-        (2, 'unlimited', 'unlimited')
+        (2, 'unlimited', 'Unlimitiert'),
+        (3, 'limited', '>=16'),
     )
     # Basic properties
     name = models.CharField(max_length=255)
@@ -81,6 +82,8 @@ class Website(models.Model):
             scores['negative']['MAX_LEN_16'] = -1
         elif self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.below_10:
             scores['negative']['MAX_LEN_10'] = -2
+        elif self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.limited:
+            scores['hint']['MAX_LEN_LIMITED'] = 0
         elif self.pw_max_length == self.PW_MAX_LENGTH_CHOICES.unlimited:
             scores['positive']['MAX_LEN_UNLIMITED'] = 1
 
