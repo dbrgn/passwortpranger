@@ -1,0 +1,240 @@
+[
+    {
+        "pk": 1,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 3,
+            "alphabet_limited": false,
+            "name": "Digitec",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "https://www.digitec.ch/",
+            "eml_recovery_plaintext": false,
+            "description": "Onlineshop mit Unterhaltungselektronik.",
+            "eml_registration_plaintext": false,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 2,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 2,
+            "alphabet_limited": false,
+            "name": "Brack",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": null,
+            "url": "https://www.brack.ch/",
+            "eml_recovery_plaintext": null,
+            "description": "Onlineshop mit Unterhaltungselektronik.",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 3,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 1,
+            "alphabet_limited": true,
+            "name": "Migros Cumulus",
+            "pw_max_length": 1,
+            "eml_reminder_plaintext": null,
+            "url": "https://www.migros.ch/cumulus",
+            "eml_recovery_plaintext": null,
+            "description": "Treueprogramm der Migros.",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 4,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 2,
+            "alphabet_limited": true,
+            "name": "Swisscom Login",
+            "pw_max_length": 3,
+            "eml_reminder_plaintext": null,
+            "url": "https://sam.sso.bluewin.ch/my/data/MyData",
+            "eml_recovery_plaintext": null,
+            "description": "Login für Swisscom Kundencenter und andere Swisscom-Dienstleistungen. Ein kompromittiertes Login ermöglicht das Fernsteuern und Resetten eines Swisscom Routers und das Bestellen von kostenpflichtigen Diensten.\r\n\r\nDie Passwortrichtlinien von Swisscom finden sich hier: http://www.swisscom.ch/de/privatkunden/hilfe/loesung/das-swisscom-login.html",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 5,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 2,
+            "alphabet_limited": true,
+            "name": "Swisscom WLAN",
+            "pw_max_length": 0,
+            "eml_reminder_plaintext": null,
+            "url": "https://sam.sso.bluewin.ch/my/data/ModemMgmtService",
+            "eml_recovery_plaintext": null,
+            "description": "Swisscom Router wie der Centro Grande werden fast komplett über das Swisscom Kundencenter gesteuert. Auch das WLAN-Passwort kann dort geändert werden.\r\n\r\nDabei wird auf die Passwortrichtlinie der Swisscom verlinkt, diese wird jedoch nicht auf dieses Passwort angewendet. Das Passwort ist auf 16 Zeichen limitiert, obwohl WPA bis 64 Zeichen ermöglicht. Kleinere Passwörter reduzieren die Sicherheit.\r\n\r\nErlaubte Zeichen sind gemäss unseren Versuchen a-z, A-Z, 0-9, - und _.",
+            "eml_registration_plaintext": null,
+            "two_factor": null
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 7,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 1,
+            "alphabet_limited": false,
+            "name": "Books",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": null,
+            "url": "https://www.books.ch/",
+            "eml_recovery_plaintext": null,
+            "description": "",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 8,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 1,
+            "alphabet_limited": false,
+            "name": "Buch.ch",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "https://www.buch.ch/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 9,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 0,
+            "alphabet_limited": true,
+            "name": "20 Minuten",
+            "pw_max_length": 0,
+            "eml_reminder_plaintext": false,
+            "url": "http://20min.ch/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 10,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 0,
+            "alphabet_limited": true,
+            "name": "Blick",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": null,
+            "url": "http://www.blick.ch/",
+            "eml_recovery_plaintext": null,
+            "description": "",
+            "eml_registration_plaintext": null,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 11,
+        "fields": {
+            "pw_strength_indicator": null,
+            "tls": 1,
+            "alphabet_limited": false,
+            "name": "Doodle",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "https://doodle.com/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": false,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 12,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 1,
+            "alphabet_limited": false,
+            "name": "Microspot",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "https://www.microspot.ch/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": false,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 13,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 1,
+            "alphabet_limited": false,
+            "name": "Oakley",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "https://ch.oakley.com/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": false,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 14,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 0,
+            "alphabet_limited": false,
+            "name": "Zukkihund",
+            "pw_max_length": 2,
+            "eml_reminder_plaintext": false,
+            "url": "http://shop.zukkihund.ch/",
+            "eml_recovery_plaintext": false,
+            "description": "",
+            "eml_registration_plaintext": true,
+            "two_factor": false
+        },
+        "model": "front.website"
+    },
+    {
+        "pk": 15,
+        "fields": {
+            "pw_strength_indicator": false,
+            "tls": 0,
+            "alphabet_limited": false,
+            "name": "Techmania",
+            "pw_max_length": 3,
+            "eml_reminder_plaintext": true,
+            "url": "http://www.techmania.ch/",
+            "eml_recovery_plaintext": null,
+            "description": "Onlineshop für Unterhaltungselektronik, PC Bauteile etc.",
+            "eml_registration_plaintext": true,
+            "two_factor": false
+        },
+        "model": "front.website"
+    }
+]

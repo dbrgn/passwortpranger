@@ -36,6 +36,7 @@ echo "---> Creating database..."
 sudo -u postgres createuser -s vagrant || exit 0
 sudo -u vagrant createdb pranger || exit 0
 sudo -u vagrant -E bash -c "VIRTUAL/bin/python pranger/pranger/manage.py migrate" || exit 0
+sudo -u vagrant -E bash -c "VIRTUAL/bin/python pranger/pranger/manage.py loaddata testdata"
 
 echo "---> Done!"
 echo " "
@@ -43,6 +44,7 @@ echo "To start the dev server:"
 echo "$ vagrant ssh"
 echo "$ . VIRTUAL/bin/activate"
 echo "$ cd pranger/pranger"
+echo "$ ./manage.py createsuperuser"
 echo "$ ./manage.py runserver 0.0.0.0:8000"
 echo " "
 
