@@ -15,10 +15,12 @@ apt-get upgrade -q -y || exit 0
 
 echo "---> Installing dependencies..."
 apt-get install -q -y \
-  postgresql-9.1 postgresql-client-9.1 libpq-dev \
   python-dev python-virtualenv python-pip \
+  postgresql-9.1 postgresql-client-9.1 libpq-dev \
   git mercurial \
-  libxml2-dev libxslt-dev || exit 0
+  vim \
+  libxml2-dev libxslt-dev \
+  gettext || exit 0
 
 echo "---> Setting up virtualenv..."
 cd /home/vagrant
