@@ -206,12 +206,12 @@ msgstr ""
 "nicht negativ werden."
 
 #: front/templates/front/website.html:132
-msgid "The password length is limited to 16 chars."
-msgstr "Die Passwortlänge ist auf 16 Zeichen beschränkt."
+msgid "The password length is limited to less than 16 characters."
+msgstr "Die Passwortlänge ist auf weniger als 16 Zeichen beschränkt."
 
 #: front/templates/front/website.html:149
-msgid "The password length is limited to 10 chars."
-msgstr "Die Passwortlänge ist auf 10 Zeichen limitiert."
+msgid "The password length is limited to less than 10 characters."
+msgstr "Die Passwortlänge ist auf weniger als 10 Zeichen limitiert."
 
 #: front/templates/front/website.html:153
 #, python-format

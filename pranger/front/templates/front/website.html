@@ -129,7 +129,7 @@
                     <ul class="negative">
                         {% if "MAX_LEN_16" in site.scores.negative %}
                             <li>
-                                <h4>{% trans "The password length is limited to 16 chars." %}</h4>
+                                <h4>{% trans "The password length is limited to less than 16 characters." %}</h4>
                                 <span>{{ site.scores.negative.MAX_LEN_16 }}</span>
 
                                 <p>
@@ -146,7 +146,7 @@
                         {% endif %}
                         {% if "MAX_LEN_10" in site.scores.negative %}
                             <li>
-                                <h4>{% trans "The password length is limited to 10 chars." %}</h4>
+                                <h4>{% trans "The password length is limited to less than 10 characters." %}</h4>
                                 <span>{{ site.scores.negative.MAX_LEN_10 }}</span>
 
                                 <p>
